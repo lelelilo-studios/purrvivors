@@ -1,0 +1,21 @@
+# Godot 4 caches
+.godot/
+.import/
+
+# Exported binaries (web build is exported into docs/ and IS committed)
+export/
+*.apk
+*.aab
+*.ipa
+*.exe
+*.pck
+*.zip
+
+# OS / editor noise
+.DS_Store
+*~
+*.tmp
+
+# Secrets — never commit tokens of any kind
+.env
+*.token

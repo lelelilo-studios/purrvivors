@@ -1,0 +1,49 @@
+{
+  "_comment": "PixelLab asset registry. Keep IDs so later phases can call animate_character / animate_object / create_character_state on existing assets instead of regenerating. Update on every accepted generation.",
+  "style_anchor": "characters.tabby",
+  "characters": {
+    "tabby": {
+      "id": "dc79260b-2643-4dba-85d2-019f8c702754",
+      "role": "playable cat (anchor)",
+      "mode": "pro",
+      "template": "cat",
+      "size_px": 48,
+      "canvas_px": 84,
+      "view": "low top-down",
+      "directions": 8,
+      "animations": [],
+      "cost_generations": 20
+    },
+    "dog": {
+      "id": "00b173ec-7ec4-4bc5-a7a6-c22bca2d3828",
+      "role": "enemy: basic chaser",
+      "mode": "pro",
+      "template": "dog",
+      "size_px": 48,
+      "canvas_px": 84,
+      "view": "low top-down",
+      "directions": 8,
+      "animations": [],
+      "cost_generations": 20
+    }
+  },
+  "objects": {
+    "cookie": {
+      "id": "0e259eb5-11c1-469d-9abe-58b2fb9004f4",
+      "role": "snack pickup: small XP",
+      "size_px": 32,
+      "source_review_pack": "204c60e3-58a0-4e85-a7ef-88ca5b795138",
+      "source_frame": 31,
+      "alternates": {
+        "frame_3": "f7ce2823-69e1-4e04-afe9-0d4a7c528807",
+        "frame_58": "9e066522-e05e-4b42-9380-e6ad61b04dbf"
+      },
+      "cost_generations": 20
+    }
+  },
+  "budget": {
+    "pool_total": 5000,
+    "spent": 60,
+    "spend_cap_75pct": 3750
+  }
+}
