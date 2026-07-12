@@ -16,6 +16,13 @@ run/main_scene="res://scenes/main/main.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+; Web defaults to "Sample" playback, which only outputs the Master bus
+; (godotengine/godot#95991) - our Music/SFX buses would be silent.
+; Stream = real mixing in the AudioWorklet; works single-threaded.
+general/default_playback_type.web=1
+
 [autoload]
 
 Balance="*res://autoload/balance.gd"

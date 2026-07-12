@@ -242,6 +242,13 @@ def build_sfx():
     # pause: muted blip
     S["pause"] = tone(440, 330, 0.09, "tri", 0.4)
 
+    # ui click: soft wooden tap
+    S["click"] = mix_into(tone(300, 210, 0.05, "tri", 0.5, release=0.04),
+                          noise(0.02, 0.2, 0.5), 0.0)
+
+    # ui hover: barely-there tick
+    S["hover"] = tone(500, 470, 0.03, "sine", 0.25, release=0.02)
+
     return S
 
 

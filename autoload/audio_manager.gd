@@ -25,6 +25,15 @@ func _ready() -> void:
 	_music_player = AudioStreamPlayer.new()
 	_music_player.bus = &"Music"
 	add_child(_music_player)
+	# Every Button in the game gets click + hover sounds automatically.
+	# Skip flat buttons (invisible hotspots) and Cards (they voice themselves).
+	get_tree().node_added.connect(_on_node_added)
+
+
+func _on_node_added(node: Node) -> void:
+	if node is Button and not node.flat and node.theme_type_variation != &"Card":
+		node.pressed.connect(play_sfx.bind("click", 0.1, -6.0))
+		node.mouse_entered.connect(play_sfx.bind("hover", 0.1, -14.0))
 
 
 func play_sfx(name: String, pitch_variation := 0.08, volume_db := 0.0) -> void:
