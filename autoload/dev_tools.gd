@@ -15,6 +15,9 @@ var _screenshot_path := ""
 
 
 func _ready() -> void:
+	if OS.is_debug_build():
+		GameData.boss_defeated.connect(func(boss_id: String, total: int) -> void:
+			print("[dev] boss defeated: %s (total %d)" % [boss_id, total]))
 	var delay := 2.5
 	for arg: String in OS.get_cmdline_user_args():
 		if arg.begins_with("--shot-delay="):
@@ -206,6 +209,7 @@ func _take_screenshot() -> void:
 		print("[dbg] hud canvas=%s world canvas=%s hud layer parent=%s" % [
 			arena.hud.get_canvas(), arena.enemy_container.get_canvas(),
 			arena.hud.get_parent().name])
-	print("screenshot -> %s (err=%d) fps=%d enemies=%d" % [
-		_screenshot_path, err, Engine.get_frames_per_second(), enemies])
+	print("screenshot -> %s (err=%d) fps=%d enemies=%d bosses_beaten=%d kills=%d" % [
+		_screenshot_path, err, Engine.get_frames_per_second(), enemies,
+		GameData.bosses_beaten, GameData.kills])
 	get_tree().quit()

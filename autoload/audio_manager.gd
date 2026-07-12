@@ -47,8 +47,9 @@ func play_music(path: String, fade_sec := 0.8) -> void:
 		return
 	if _music_fade_tween != null:
 		_music_fade_tween.kill()
-	_music_fade_tween = create_tween()
+		_music_fade_tween = null
 	if _music_player.playing:
+		_music_fade_tween = create_tween()
 		_music_fade_tween.tween_property(_music_player, "volume_db", -40.0, fade_sec)
 		_music_fade_tween.tween_callback(_swap_music.bind(stream, fade_sec))
 	else:

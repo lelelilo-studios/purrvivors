@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp87fvonlvpo3"
-path="res://.godot/imported/index.apple-touch-icon.png-b21a756d869f84af832970a74d8371bc.ctex"
+uid="uid://wuvgujcmgyd"
+path="res://.godot/imported/north-east_0.png-2d02fd19b7ec3d5566be109fa5cd1fc0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://docs/index.apple-touch-icon.png"
-dest_files=["res://.godot/imported/index.apple-touch-icon.png-b21a756d869f84af832970a74d8371bc.ctex"]
+source_file="res://assets/sprites/enemies/crow/anim_flying_wings_flapping_steadily_gliding_forward/north-east_0.png"
+dest_files=["res://.godot/imported/north-east_0.png-2d02fd19b7ec3d5566be109fa5cd1fc0.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpxkdysy8rvkp"
-path="res://.godot/imported/index.png-0c78d14d192abe5f22f8c25928ca1ab8.ctex"
+uid="uid://cpmnw3smpl35y"
+path="res://.godot/imported/east_0.png-ae494d270611feb0bdb66f2d9861acc2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://docs/index.png"
-dest_files=["res://.godot/imported/index.png-0c78d14d192abe5f22f8c25928ca1ab8.ctex"]
+source_file="res://assets/sprites/bosses/vacuum/anim_hovering_menacingly_body_swaying_slightly_hose_a/east_0.png"
+dest_files=["res://.godot/imported/east_0.png-ae494d270611feb0bdb66f2d9861acc2.ctex"]
 
 [params]
 

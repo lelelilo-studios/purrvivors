@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bny5kym5c33kp"
-path="res://.godot/imported/index.icon.png-b92c9a802ad4b78e247784454a6b506f.ctex"
+uid="uid://dfnaqla12cgyg"
+path="res://.godot/imported/north-west_3.png-5b218fe13ea09c381777c96092e250ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://docs/index.icon.png"
-dest_files=["res://.godot/imported/index.icon.png-b92c9a802ad4b78e247784454a6b506f.ctex"]
+source_file="res://assets/sprites/enemies/crow/anim_flying_wings_flapping_steadily_gliding_forward/north-west_3.png"
+dest_files=["res://.godot/imported/north-west_3.png-5b218fe13ea09c381777c96092e250ca.ctex"]
 
 [params]
 

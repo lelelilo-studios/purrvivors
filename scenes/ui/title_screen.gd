@@ -24,6 +24,7 @@ func _ready() -> void:
 		%QuitButton.hide()   # browsers do not appreciate quit()
 	if ResourceLoader.exists(BG_PATH):
 		background.texture = load(BG_PATH)
+		_add_secret_cat_pet()
 	if ResourceLoader.exists(LOGO_PATH):
 		logo_image.texture = load(LOGO_PATH)
 		logo_text.hide()
@@ -34,6 +35,28 @@ func _ready() -> void:
 
 func refresh() -> void:
 	coins_label.text = "%d Fish Coins in the jar" % GameData.meta.coins
+
+
+## Small delight: pet the title cat, get a meow. Nobody needs to know.
+func _add_secret_cat_pet() -> void:
+	var pet_zone := Button.new()
+	pet_zone.flat = true
+	pet_zone.add_theme_stylebox_override(&"normal", StyleBoxEmpty.new())
+	pet_zone.add_theme_stylebox_override(&"hover", StyleBoxEmpty.new())
+	pet_zone.add_theme_stylebox_override(&"pressed", StyleBoxEmpty.new())
+	pet_zone.add_theme_stylebox_override(&"focus", StyleBoxEmpty.new())
+	pet_zone.set_anchors_preset(Control.PRESET_CENTER)
+	pet_zone.custom_minimum_size = Vector2(220, 280)
+	pet_zone.position = Vector2(-110, -140)
+	pet_zone.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	pet_zone.pressed.connect(func() -> void:
+		AudioManager.play_sfx("meow", 0.2)
+		var t := create_tween()
+		background.pivot_offset = background.size / 2.0
+		t.tween_property(background, "scale", Vector2.ONE * 1.01, 0.08)
+		t.tween_property(background, "scale", Vector2.ONE, 0.12))
+	add_child(pet_zone)
+	move_child(pet_zone, background.get_index() + 1)
 
 
 func _start_logo_bob() -> void:
