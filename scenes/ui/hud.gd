@@ -12,6 +12,9 @@ const COIN_TEXTURE_PATH := "res://assets/sprites/snacks/coin.png"
 @onready var coin_label: Label = %CoinLabel
 @onready var coin_icon: TextureRect = %CoinIcon
 @onready var kills_label: Label = %KillsLabel
+@onready var announce_label: Label = %Announce
+
+var _announce_tween: Tween
 
 var _xp_target := 0.0
 var _heart_texture: Texture2D
@@ -79,6 +82,22 @@ func _on_hp_changed(hp: int, max_hp: int) -> void:
 		if hearts_box.get_child_count() == 0:
 			hearts_box.add_child(Label.new())
 		hearts_box.get_child(0).text = "HP %d/%d" % [hp, max_hp]
+
+
+## Big center-screen callout: boss intros, enrages, defeats.
+func announce(text: String) -> void:
+	announce_label.text = text
+	announce_label.pivot_offset = announce_label.size / 2.0
+	if _announce_tween != null:
+		_announce_tween.kill()
+	announce_label.scale = Vector2.ONE * 0.8
+	announce_label.modulate.a = 0.0
+	_announce_tween = create_tween()
+	_announce_tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+	_announce_tween.tween_property(announce_label, "modulate:a", 1.0, 0.18)
+	_announce_tween.parallel().tween_property(announce_label, "scale", Vector2.ONE, 0.3)
+	_announce_tween.tween_interval(2.4)
+	_announce_tween.tween_property(announce_label, "modulate:a", 0.0, 0.5)
 
 
 func _on_coins_changed(amount: int) -> void:

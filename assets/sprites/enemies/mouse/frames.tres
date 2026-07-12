@@ -1,0 +1,141 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/mouse/east.png" id="1_n8gv5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/mouse/north.png" id="2_x7ft0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/mouse/north-east.png" id="3_yy6ak"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/mouse/north-west.png" id="4_6tswu"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/mouse/south.png" id="5_2bqdn"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/mouse/south-east.png" id="6_d53dp"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/mouse/south-west.png" id="7_yc5ra"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/mouse/west.png" id="8_eu8mk"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_n8gv5")
+}],
+"loop": 1,
+"name": &"idle_east",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x7ft0")
+}],
+"loop": 1,
+"name": &"idle_north",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_yy6ak")
+}],
+"loop": 1,
+"name": &"idle_north-east",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_6tswu")
+}],
+"loop": 1,
+"name": &"idle_north-west",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2bqdn")
+}],
+"loop": 1,
+"name": &"idle_south",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_d53dp")
+}],
+"loop": 1,
+"name": &"idle_south-east",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_yc5ra")
+}],
+"loop": 1,
+"name": &"idle_south-west",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_eu8mk")
+}],
+"loop": 1,
+"name": &"idle_west",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_n8gv5")
+}],
+"loop": 1,
+"name": &"walk_east",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x7ft0")
+}],
+"loop": 1,
+"name": &"walk_north",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_yy6ak")
+}],
+"loop": 1,
+"name": &"walk_north-east",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_6tswu")
+}],
+"loop": 1,
+"name": &"walk_north-west",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2bqdn")
+}],
+"loop": 1,
+"name": &"walk_south",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_d53dp")
+}],
+"loop": 1,
+"name": &"walk_south-east",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_yc5ra")
+}],
+"loop": 1,
+"name": &"walk_south-west",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_eu8mk")
+}],
+"loop": 1,
+"name": &"walk_west",
+"speed": 5.0
+}]

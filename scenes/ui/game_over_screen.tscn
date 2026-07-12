@@ -34,7 +34,7 @@ layout_mode = 2
 
 [node name="VBox" type="VBoxContainer" parent="Center/Panel"]
 layout_mode = 2
-theme_override_constants/separation = 12
+theme_override_constants/separation = 10
 
 [node name="ResultTitle" type="Label" parent="Center/Panel/VBox"]
 unique_name_in_owner = true
@@ -42,6 +42,29 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 48
 horizontal_alignment = 1
 text = "Defeat..."
+
+[node name="Paws" type="Label" parent="Center/Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(0.94, 0.56, 0.29, 1)
+horizontal_alignment = 1
+text = ""
+
+[node name="NewBest" type="Label" parent="Center/Panel/VBox"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.965, 0.769, 0.325, 1)
+horizontal_alignment = 1
+text = "NEW BEST!"
+
+[node name="FlavorLine" type="Label" parent="Center/Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+modulate = Color(1, 1, 1, 0.75)
+horizontal_alignment = 1
+text = ""
 
 [node name="Stats" type="Label" parent="Center/Panel/VBox"]
 unique_name_in_owner = true
@@ -60,3 +83,13 @@ text = "0"
 unique_name_in_owner = true
 layout_mode = 2
 text = "One More Run"
+
+[node name="CafeButton" type="Button" parent="Center/Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Spend it at the Cafe"
+
+[node name="MenuButton" type="Button" parent="Center/Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Title Screen"

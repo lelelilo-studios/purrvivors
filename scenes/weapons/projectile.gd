@@ -18,9 +18,11 @@ var _hit: Dictionary = {}
 
 
 func launch(arena: Node2D, texture: Texture2D, pos: Vector2, vel: Vector2,
-		dmg: float, pierce_count: int, kb := 70.0, lifetime := 1.4) -> void:
+		dmg: float, pierce_count: int, kb := 70.0, lifetime := 1.4,
+		sprite_scale := 1.0) -> void:
 	_arena = arena
 	sprite.texture = texture
+	sprite.scale = Vector2.ONE * sprite_scale
 	position = pos
 	velocity = vel
 	damage = dmg

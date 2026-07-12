@@ -27,7 +27,7 @@ func _ready() -> void:
 			timer.wait_time = 5.0
 			timer.autostart = true
 			timer.timeout.connect(func() -> void:
-				var arena := get_tree().current_scene as Arena
+				var arena := get_tree().get_first_node_in_group(&"arena") as Arena
 				if arena == null:
 					return
 				print("[perf] fps=%d enemies=%d snacks=%d director_us=%d snacks_us=%d fx=%d proj=%d" % [
@@ -41,13 +41,37 @@ func _ready() -> void:
 			_screenshot_path = arg.get_slice("=", 1)
 			get_tree().create_timer(delay, true, false, true).timeout.connect(_take_screenshot)
 		elif arg.begins_with("--start-time="):
+			# Fires after --quick-start's arena spawn (which resets run_time).
 			var t := float(arg.get_slice("=", 1))
-			get_tree().create_timer(0.5).timeout.connect(
+			get_tree().create_timer(1.4).timeout.connect(
 				func() -> void: GameData.run_time = t)
 		elif arg.begins_with("--grant-xp="):
 			var xp := int(arg.get_slice("=", 1))
 			get_tree().create_timer(1.5).timeout.connect(
 				func() -> void: GameData.gain_xp(xp))
+		elif arg == "--quick-start":
+			get_tree().create_timer(0.6).timeout.connect(func() -> void:
+				var main := get_tree().current_scene as Main
+				if main != null:
+					main._start_run(GameData.meta.selected_cat))
+		elif arg.begins_with("--boss="):
+			var idx := int(arg.get_slice("=", 1))
+			get_tree().create_timer(1.0).timeout.connect(func() -> void:
+				var arena := get_tree().get_first_node_in_group(&"arena") as Arena
+				if arena != null:
+					arena.spawn_boss(idx)
+					arena.next_boss_index = idx + 1)
+		elif arg.begins_with("--all-weapons="):
+			var lvl := int(arg.get_slice("=", 1))
+			get_tree().create_timer(1.0).timeout.connect(func() -> void:
+				var arena := get_tree().get_first_node_in_group(&"arena") as Arena
+				if arena == null:
+					return
+				for id: String in Balance.WEAPONS:
+					arena.player.weapons.add_weapon(id)
+					for i in lvl - 1:
+						arena.player.weapons.level_up_weapon(id)
+				print("[dev] all weapons at level ", lvl))
 
 
 func _input(event: InputEvent) -> void:
@@ -67,10 +91,15 @@ func _input(event: InputEvent) -> void:
 				GameData.add_run_coins(200)
 			KEY_F5:
 				GameData.gain_xp(Balance.xp_to_next(GameData.level))
+			KEY_F6:
+				var arena := get_tree().get_first_node_in_group(&"arena") as Arena
+				if arena != null and arena.next_boss_index < 3:
+					arena.spawn_boss(arena.next_boss_index)
+					arena.next_boss_index += 1
 
 
 func _kill_all() -> void:
-	var arena := get_tree().current_scene as Arena
+	var arena := get_tree().get_first_node_in_group(&"arena") as Arena
 	if arena == null:
 		return
 	for enemy: Enemy in arena.active_enemies.duplicate():
@@ -80,7 +109,7 @@ func _kill_all() -> void:
 func _take_screenshot() -> void:
 	var image := get_viewport().get_texture().get_image()
 	var err := image.save_png(_screenshot_path)
-	var arena := get_tree().current_scene as Arena
+	var arena := get_tree().get_first_node_in_group(&"arena") as Arena
 	var enemies := arena.active_enemies.size() if arena != null else -1
 	print("screenshot -> %s (err=%d) fps=%d enemies=%d" % [
 		_screenshot_path, err, Engine.get_frames_per_second(), enemies])

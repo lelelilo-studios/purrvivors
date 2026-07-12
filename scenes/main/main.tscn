@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_main"]
+[ext_resource type="PackedScene" path="res://scenes/ui/title_screen.tscn" id="2_title"]
+[ext_resource type="PackedScene" path="res://scenes/ui/cat_select_screen.tscn" id="3_select"]
+[ext_resource type="PackedScene" path="res://scenes/ui/shop_screen.tscn" id="4_shop"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_main")
+
+[node name="Screens" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="TitleScreen" parent="Screens" instance=ExtResource("2_title")]
+
+[node name="CatSelectScreen" parent="Screens" instance=ExtResource("3_select")]
+visible = false
+
+[node name="ShopScreen" parent="Screens" instance=ExtResource("4_shop")]
+visible = false
+
+[node name="TransitionLayer" type="CanvasLayer" parent="."]
+layer = 50
+
+[node name="Fade" type="ColorRect" parent="TransitionLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16, 0.1, 0.07, 1)

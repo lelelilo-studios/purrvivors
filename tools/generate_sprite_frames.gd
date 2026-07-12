@@ -72,15 +72,19 @@ func _build(dir: String) -> bool:
 				frames.add_frame(name, t)
 
 	# Every character must at least answer to idle_* and walk_* - fall back
-	# to the static rotation frame when no real animation exists yet.
+	# to the static rotation frame. Billboard sprites (single south.png,
+	# e.g. roomba / dust bunny) reuse that one image for all directions.
 	for want in ["idle", "walk"]:
 		for d: String in DIRECTIONS:
 			var name := StringName("%s_%s" % [want, d])
-			if frames.has_animation(name) or not rotations.has(d):
+			if frames.has_animation(name):
+				continue
+			var tex: Texture2D = rotations.get(d, rotations.get("south"))
+			if tex == null:
 				continue
 			frames.add_animation(name)
 			frames.set_animation_speed(name, 5.0)
-			frames.add_frame(name, rotations[d])
+			frames.add_frame(name, tex)
 
 	if frames.get_animation_names().is_empty():
 		return false

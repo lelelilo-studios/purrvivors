@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="Script" path="res://scenes/run/arena.gd" id="1_arena"]
+[ext_resource type="Script" path="res://scenes/run/ground.gd" id="0_ground"]
 [ext_resource type="Script" path="res://scenes/run/game_camera.gd" id="2_camera"]
 [ext_resource type="Script" path="res://scenes/run/enemy_director.gd" id="3_director"]
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="4_player"]
@@ -11,6 +12,9 @@
 
 [node name="Arena" type="Node2D"]
 script = ExtResource("1_arena")
+
+[node name="Ground" type="TileMapLayer" parent="."]
+script = ExtResource("0_ground")
 
 [node name="Snacks" type="Node2D" parent="."]
 

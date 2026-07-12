@@ -20,6 +20,7 @@ var meta := {
 	"unlocked_cats": ["tabby"],
 	"best": {},              # cat_id -> {"tier": int, "score": int}
 	"selected_cat": "tabby",
+	"runs": 0,               # total runs started (rotates the biome)
 }
 
 # -------------------------------- run state --------------------------------
@@ -44,6 +45,7 @@ func _ready() -> void:
 func start_run(cat_id: String) -> void:
 	current_cat = cat_id
 	meta.selected_cat = cat_id
+	meta.runs = int(meta.get("runs", 0)) + 1
 	run_active = true
 	run_time = 0.0
 	kills = 0

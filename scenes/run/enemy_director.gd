@@ -129,6 +129,8 @@ func _update_enemies(delta: float) -> void:
 		grid.clear()
 		for e: Enemy in arena.active_enemies:
 			grid.insert(e, e.position)
+		for b: Boss in arena.active_bosses:
+			grid.insert(b, b.position)
 
 	var player: Player = arena.player
 	var player_pos := player.position

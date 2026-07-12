@@ -57,3 +57,8 @@ text = "Back to the Fray"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Start Over"
+
+[node name="QuitButton" type="Button" parent="Center/Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back to the Cafe"

@@ -31,12 +31,15 @@ def main() -> None:
     with zipfile.ZipFile(zip_path) as zf:
         for info in zf.infolist():
             parts = pathlib.PurePosixPath(info.filename).parts
-            if len(parts) >= 3 and parts[1] == "rotations":
-                out = dest / parts[2]
-            elif len(parts) >= 5 and parts[1] == "animations":
-                anim = name_map.get(parts[2], parts[2].split("-")[0])
-                direction = parts[3]
-                frame = int(parts[4].replace("frame_", "").replace(".png", ""))
+            # Character zips nest under <Name>/, object zips start at root.
+            if parts and parts[0] not in ("rotations", "animations"):
+                parts = parts[1:]
+            if len(parts) >= 2 and parts[0] == "rotations":
+                out = dest / parts[1]
+            elif len(parts) >= 4 and parts[0] == "animations":
+                anim = name_map.get(parts[1], parts[1].split("-")[0])
+                direction = parts[2]
+                frame = int(parts[3].replace("frame_", "").replace(".png", ""))
                 out = dest / f"anim_{anim}" / f"{direction}_{frame}.png"
             else:
                 continue

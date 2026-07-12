@@ -1,0 +1,141 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/east.png" id="1_i8nc6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/north.png" id="2_3swsu"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/north-east.png" id="3_l284g"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/north-west.png" id="4_4ykec"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/south.png" id="5_m7b2l"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/south-east.png" id="6_2tqib"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/south-west.png" id="7_aidnn"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/west.png" id="8_w03cg"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i8nc6")
+}],
+"loop": 1,
+"name": &"idle_east",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3swsu")
+}],
+"loop": 1,
+"name": &"idle_north",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_l284g")
+}],
+"loop": 1,
+"name": &"idle_north-east",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_4ykec")
+}],
+"loop": 1,
+"name": &"idle_north-west",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_m7b2l")
+}],
+"loop": 1,
+"name": &"idle_south",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_2tqib")
+}],
+"loop": 1,
+"name": &"idle_south-east",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_aidnn")
+}],
+"loop": 1,
+"name": &"idle_south-west",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_w03cg")
+}],
+"loop": 1,
+"name": &"idle_west",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i8nc6")
+}],
+"loop": 1,
+"name": &"walk_east",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3swsu")
+}],
+"loop": 1,
+"name": &"walk_north",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_l284g")
+}],
+"loop": 1,
+"name": &"walk_north-east",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_4ykec")
+}],
+"loop": 1,
+"name": &"walk_north-west",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_m7b2l")
+}],
+"loop": 1,
+"name": &"walk_south",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_2tqib")
+}],
+"loop": 1,
+"name": &"walk_south-east",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_aidnn")
+}],
+"loop": 1,
+"name": &"walk_south-west",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_w03cg")
+}],
+"loop": 1,
+"name": &"walk_west",
+"speed": 5.0
+}]

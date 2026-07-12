@@ -29,7 +29,7 @@ func _try_fire() -> bool:
 		projectile.launch(
 			arena(), _texture, manager.player.position,
 			base_dir.rotated(angle_offset) * float(s.speed),
-			damage(), int(s.pierce), 60.0
+			damage(), int(s.pierce), 60.0, 1.4, 0.72
 		)
 	AudioManager.play_sfx("hairball", 0.12)
 	return true

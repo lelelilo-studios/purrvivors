@@ -2,13 +2,21 @@ extends Control
 ## Pause overlay. Also triggered automatically when the window loses focus
 ## (web tab switch / phone lock).
 
+signal restart_requested
+signal quit_requested
+
 @onready var resume_button: Button = %ResumeButton
 @onready var restart_button: Button = %RestartButton
 
 
 func _ready() -> void:
 	resume_button.pressed.connect(close)
-	restart_button.pressed.connect(_restart)
+	restart_button.pressed.connect(func() -> void:
+		close()
+		restart_requested.emit())
+	%QuitButton.pressed.connect(func() -> void:
+		close()
+		quit_requested.emit())
 
 
 func open() -> void:
@@ -22,11 +30,6 @@ func open() -> void:
 func close() -> void:
 	visible = false
 	get_tree().paused = false
-
-
-func _restart() -> void:
-	get_tree().paused = false
-	get_tree().reload_current_scene()
 
 
 func _unhandled_input(event: InputEvent) -> void:

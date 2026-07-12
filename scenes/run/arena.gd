@@ -1,5 +1,7 @@
 class_name Arena
 extends Node2D
+
+signal run_finished(action: String)   # "again" | "shop" | "menu"
 ## One run: owns the player, the horde (via EnemyDirector), snacks,
 ## projectiles, FX, HUD and the level-up / pause / game-over screens.
 ## Everything spawnable is pooled.
@@ -8,6 +10,8 @@ const ENEMY_SCENE := preload("res://scenes/enemies/enemy.tscn")
 const SNACK_SCENE := preload("res://scenes/snacks/snack.tscn")
 const POOF_SCENE := preload("res://scenes/fx/poof.tscn")
 const PROJECTILE_SCENE := preload("res://scenes/weapons/projectile.tscn")
+const BOSS_SCENE := preload("res://scenes/bosses/boss.tscn")
+const BOSS_IDS := ["boss_bulldog", "boss_vacuum", "boss_fatcat"]
 
 const POOF_ENEMY_COLOR := Color(0.72, 0.6, 0.47)
 const POOF_EAT_COLOR := Color(0.98, 0.83, 0.4)
@@ -15,6 +19,8 @@ const POOF_EAT_COLOR := Color(0.98, 0.83, 0.4)
 var enemy_grid := SpatialGrid.new()
 var active_enemies: Array[Enemy] = []
 var active_snacks: Array[Snack] = []
+var active_bosses: Array[Boss] = []
+var next_boss_index := 0
 var run_over := false
 
 var _pending_level_ups := 0
@@ -25,6 +31,7 @@ var _hitstopping := false
 var perf_director_us := 0
 var perf_snacks_us := 0
 
+@onready var ground: Ground = $Ground
 @onready var player: Player = $World/Player
 @onready var camera: GameCamera = $GameCamera
 @onready var director: EnemyDirector = $Director
@@ -32,6 +39,7 @@ var perf_snacks_us := 0
 @onready var enemy_container: Node2D = $World/Enemies
 @onready var projectile_container: Node2D = $Projectiles
 @onready var fx_container: Node2D = $FX
+@onready var hud: Control = $HUDLayer/HUD
 @onready var level_up_screen: Control = $ScreenLayer/LevelUpScreen
 @onready var pause_screen: Control = $ScreenLayer/PauseScreen
 @onready var game_over_screen: Control = $ScreenLayer/GameOverScreen
@@ -39,13 +47,20 @@ var perf_snacks_us := 0
 
 func _ready() -> void:
 	randomize()
+	add_to_group(&"arena")
 	GameData.start_run(GameData.meta.selected_cat)
+	var biome: String = Ground.BIOMES[int(GameData.meta.get("runs", 0)) % Ground.BIOMES.size()]
+	ground.setup(biome, randi())
+	ground.update_around(Vector2.ZERO)
 	player.setup(GameData.meta.selected_cat, self)
 	player.died.connect(_on_player_died)
 	director.setup(self)
 	GameData.leveled_up.connect(_on_leveled_up)
 	InputRouter.app_focus_lost.connect(_on_focus_lost)
 	level_up_screen.option_chosen.connect(_on_upgrade_chosen)
+	game_over_screen.action.connect(_finish_run)
+	pause_screen.restart_requested.connect(_finish_run.bind("again"))
+	pause_screen.quit_requested.connect(_finish_run.bind("menu"))
 	ObjectPool.prewarm(ENEMY_SCENE, 160)
 	ObjectPool.prewarm(SNACK_SCENE, 80)
 	ObjectPool.prewarm(POOF_SCENE, 16)
@@ -59,12 +74,69 @@ func _physics_process(delta: float) -> void:
 		return
 	GameData.add_run_time(delta)
 	camera.position = player.position
+	ground.update_around(player.position)
 	var t0 := Time.get_ticks_usec()
 	director.update(delta)
 	var t1 := Time.get_ticks_usec()
 	_update_snacks(delta)
 	perf_snacks_us = Time.get_ticks_usec() - t1
 	perf_director_us = t1 - t0
+	_check_boss_milestones()
+
+
+# --------------------------------- bosses ----------------------------------
+
+func _check_boss_milestones() -> void:
+	if next_boss_index >= Balance.BOSS_TIMES_SEC.size():
+		return
+	if GameData.run_time >= Balance.BOSS_TIMES_SEC[next_boss_index]:
+		spawn_boss(next_boss_index)
+		next_boss_index += 1
+
+
+func spawn_boss(index: int) -> void:
+	var boss_id: String = BOSS_IDS[index]
+	var def: Dictionary = Balance.BOSSES[boss_id]
+	var boss: Boss = BOSS_SCENE.instantiate()
+	enemy_container.add_child(boss)
+	var angle := randf() * TAU
+	boss.setup(boss_id, self, player.position
+		+ Vector2.from_angle(angle) * (camera.offscreen_radius() + 40.0))
+	active_bosses.append(boss)
+	hud.announce("%s  -  %s" % [def.display_name, def.intro_line])
+	camera.add_trauma(0.5)
+	AudioManager.play_sfx("boss_roar")
+
+
+func damage_boss(boss: Boss, amount: float) -> void:
+	if boss.take_damage(amount):
+		_kill_boss(boss)
+
+
+func _kill_boss(boss: Boss) -> void:
+	boss.dead = true
+	var def := boss.def
+	for snack_type: String in def.snacks:
+		spawn_snack(snack_type, boss.position + _scatter())
+	for i in 3:
+		spawn_snack("coin", boss.position + _scatter())
+	_poof(boss.position, Color(1.0, 0.85, 0.4), 34, 5.0, 120.0)
+	camera.add_trauma(0.7)
+	hitstop(0.22, 0.08)
+	AudioManager.play_sfx("boss_defeat")
+	GameData.notify_boss_defeated(boss.boss_id)
+	hud.announce("%s defeated!" % def.display_name)
+	active_bosses.erase(boss)
+	boss.queue_free()
+	if boss.boss_id == "boss_fatcat":
+		_full_clear()
+
+
+func _full_clear() -> void:
+	run_over = true
+	AudioManager.play_sfx("fanfare")
+	var summary := GameData.end_run(GameData.run_time)
+	game_over_screen.show_summary(summary)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -83,12 +155,16 @@ func spawn_enemy(type: String, pos: Vector2, elite := false) -> void:
 	active_enemies.append(enemy)
 
 
-func damage_enemy(enemy: Enemy, amount: float, knockback := Vector2.ZERO) -> void:
-	if enemy.dead:
+func damage_enemy(target: Node2D, amount: float, knockback := Vector2.ZERO) -> void:
+	if target.dead:
+		return
+	if target is Boss:
+		AudioManager.play_sfx("enemy_hit", 0.14, -4.0)
+		damage_boss(target, amount)
 		return
 	AudioManager.play_sfx("enemy_hit", 0.14, -6.0)
-	if enemy.take_damage(amount, knockback):
-		_kill_enemy(enemy)
+	if target.take_damage(amount, knockback):
+		_kill_enemy(target)
 
 
 func _kill_enemy(enemy: Enemy) -> void:
@@ -241,6 +317,15 @@ func _on_player_died() -> void:
 	AudioManager.play_sfx("defeat")
 	var summary := GameData.end_run(GameData.run_time)
 	game_over_screen.show_summary(summary)
+
+
+func _finish_run(action: String) -> void:
+	# If the run is being abandoned mid-fight, still bank coins + progress.
+	if not run_over:
+		run_over = true
+		GameData.end_run(GameData.run_time)
+	get_tree().paused = false
+	run_finished.emit(action)
 
 
 func _scatter() -> Vector2:
