@@ -17,7 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.85, 0.72, 0.55, 1)
+color = Color(0.96, 0.9, 0.7, 1)
 
 [node name="Background" type="TextureRect" parent="."]
 unique_name_in_owner = true
@@ -31,68 +31,76 @@ expand_mode = 1
 stretch_mode = 6
 texture_filter = 1
 
-[node name="Center" type="CenterContainer" parent="."]
+[node name="Margin" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 56
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 56
+theme_override_constants/margin_bottom = 32
 
-[node name="VBox" type="VBoxContainer" parent="Center"]
+[node name="MenuColumn" type="VBoxContainer" parent="Margin"]
 layout_mode = 2
-theme_override_constants/separation = 10
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 14
 
-[node name="LogoImage" type="TextureRect" parent="Center/VBox"]
+[node name="LogoImage" type="TextureRect" parent="Margin/MenuColumn"]
 unique_name_in_owner = true
 layout_mode = 2
-custom_minimum_size = Vector2(360, 120)
+custom_minimum_size = Vector2(340, 110)
 expand_mode = 1
 stretch_mode = 5
 texture_filter = 1
 
-[node name="LogoText" type="Label" parent="Center/VBox"]
+[node name="LogoText" type="Label" parent="Margin/MenuColumn"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 theme_override_colors/font_color = Color(0.94, 0.56, 0.29, 1)
 theme_override_colors/font_shadow_color = Color(0.29, 0.196, 0.153, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
 horizontal_alignment = 1
 text = "Purrvivors"
 
-[node name="Tagline" type="Label" parent="Center/VBox"]
+[node name="MenuPanel" type="PanelContainer" parent="Margin/MenuColumn"]
+layout_mode = 2
+custom_minimum_size = Vector2(330, 0)
+
+[node name="MenuBox" type="VBoxContainer" parent="Margin/MenuColumn/MenuPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Tagline" type="Label" parent="Margin/MenuColumn/MenuPanel/MenuBox"]
 layout_mode = 2
 modulate = Color(1, 1, 1, 0.85)
-theme_override_colors/font_color = Color(0.29, 0.196, 0.153, 1)
 horizontal_alignment = 1
 text = "cozy. chaotic. covered in fur."
 
-[node name="Spacer" type="Control" parent="Center/VBox"]
-layout_mode = 2
-custom_minimum_size = Vector2(0, 16)
-
-[node name="PlayButton" type="Button" parent="Center/VBox"]
+[node name="PlayButton" type="Button" parent="Margin/MenuColumn/MenuPanel/MenuBox"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Let's Go!"
 
-[node name="ShopButton" type="Button" parent="Center/VBox"]
+[node name="ShopButton" type="Button" parent="Margin/MenuColumn/MenuPanel/MenuBox"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Cat Cafe"
 
-[node name="QuitButton" type="Button" parent="Center/VBox"]
+[node name="QuitButton" type="Button" parent="Margin/MenuColumn/MenuPanel/MenuBox"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Nap (Quit)"
 
-[node name="CoinsLabel" type="Label" parent="Center/VBox"]
+[node name="CoinsLabel" type="Label" parent="Margin/MenuColumn/MenuPanel/MenuBox"]
 unique_name_in_owner = true
 layout_mode = 2
-modulate = Color(1, 1, 1, 0.7)
-theme_override_colors/font_color = Color(0.29, 0.196, 0.153, 1)
+modulate = Color(1, 1, 1, 0.75)
 horizontal_alignment = 1
 text = ""

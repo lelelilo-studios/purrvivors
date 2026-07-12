@@ -55,7 +55,7 @@ func _build_card(option: Dictionary) -> Button:
 	margin.set_anchors_preset(Control.PRESET_FULL_RECT)
 	margin.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	for side in ["margin_left", "margin_top", "margin_right", "margin_bottom"]:
-		margin.add_theme_constant_override(side, 14)
+		margin.add_theme_constant_override(side, 20)
 	card.add_child(margin)
 
 	var vbox := VBoxContainer.new()

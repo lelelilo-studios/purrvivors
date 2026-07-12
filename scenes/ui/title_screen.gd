@@ -37,10 +37,13 @@ func refresh() -> void:
 
 
 func _start_logo_bob() -> void:
-	# Gentle breathing bob - the menu should never feel frozen.
+	# Gentle breathing pulse - the menu should never feel frozen.
+	# (Scale, not position: these live in containers that own their layout.)
 	var target: Control = logo_image if logo_image.texture != null else logo_text
+	await get_tree().process_frame
+	target.pivot_offset = target.size / 2.0
 	_logo_tween = create_tween().set_loops()
-	_logo_tween.tween_property(target, "position:y", target.position.y - 6.0, 1.6) \
+	_logo_tween.tween_property(target, "scale", Vector2.ONE * 1.035, 1.6) \
 		.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
-	_logo_tween.tween_property(target, "position:y", target.position.y, 1.6) \
+	_logo_tween.tween_property(target, "scale", Vector2.ONE, 1.6) \
 		.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)

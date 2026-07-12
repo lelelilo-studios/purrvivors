@@ -49,7 +49,7 @@ texture_margin_left = 11.0
 texture_margin_top = 10.0
 texture_margin_right = 11.0
 texture_margin_bottom = 12.0
-modulate_color = Color(0.62, 0.6, 0.58, 0.85)
+modulate_color = Color(0.8, 0.77, 0.74, 1)
 
 [sub_resource type="StyleBoxFlat" id="btn_focus"]
 draw_center = false
@@ -124,7 +124,7 @@ corner_radius_bottom_left = 3
 default_font = ExtResource("1_font")
 default_font_size = 16
 Button/colors/font_color = Color(0.29, 0.196, 0.153, 1)
-Button/colors/font_disabled_color = Color(0.42, 0.36, 0.32, 1)
+Button/colors/font_disabled_color = Color(0.36, 0.29, 0.25, 1)
 Button/colors/font_focus_color = Color(0.29, 0.196, 0.153, 1)
 Button/colors/font_hover_color = Color(0.2, 0.13, 0.1, 1)
 Button/colors/font_pressed_color = Color(0.29, 0.196, 0.153, 1)

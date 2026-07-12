@@ -9,6 +9,7 @@ extends Node
 
 var god_mode := false
 var auto_pick := false
+var bot_mode := false
 
 var _screenshot_path := ""
 
@@ -49,6 +50,30 @@ func _ready() -> void:
 			var xp := int(arg.get_slice("=", 1))
 			get_tree().create_timer(1.5).timeout.connect(
 				func() -> void: GameData.gain_xp(xp))
+		elif arg == "--touch":
+			InputRouter.touch_mode = true
+			InputRouter.touch_mode_changed.emit(true)
+		elif arg == "--bot":
+			bot_mode = true
+			GameData.run_ended.connect(func(summary: Dictionary) -> void:
+				print("[bot] tier=%d (%s) survived=%.0fs kills=%d level=%d coins=%d score=%d" % [
+					summary.tier, summary.tier_name, summary.survived_sec,
+					summary.kills, GameData.level, int(summary.coins) + int(summary.bonus),
+					summary.score])
+				get_tree().create_timer(1.0).timeout.connect(
+					func() -> void: get_tree().quit()))
+		elif arg.begins_with("--time-scale="):
+			Engine.time_scale = float(arg.get_slice("=", 1))
+		elif arg.begins_with("--screen="):
+			var which := arg.get_slice("=", 1)
+			get_tree().create_timer(0.6).timeout.connect(func() -> void:
+				var main := get_tree().current_scene as Main
+				if main == null:
+					return
+				if which == "catselect":
+					main._switch(main.cat_select)
+				elif which == "shop":
+					main._switch(main.shop_screen))
 		elif arg == "--quick-start":
 			get_tree().create_timer(0.6).timeout.connect(func() -> void:
 				var main := get_tree().current_scene as Main
@@ -96,6 +121,40 @@ func _input(event: InputEvent) -> void:
 				if arena != null and arena.next_boss_index < 3:
 					arena.spawn_boss(arena.next_boss_index)
 					arena.next_boss_index += 1
+
+
+## Balance-probe bot: kites away from threats, drifts toward snacks.
+## Deliberately mediocre - a decent human should outperform it.
+func _physics_process(_delta: float) -> void:
+	if not bot_mode:
+		return
+	var arena := get_tree().get_first_node_in_group(&"arena") as Arena
+	if arena == null or arena.run_over:
+		return
+	var player := arena.player
+	var flee := Vector2.ZERO
+	var count := 0
+	for e: Enemy in arena.active_enemies:
+		var away: Vector2 = player.position - e.position
+		var d := away.length()
+		if d < 240.0 and d > 1.0:
+			flee += away / (d * d) * 3000.0
+			count += 1
+			if count > 80:
+				break
+	for b: Boss in arena.active_bosses:
+		var away: Vector2 = player.position - b.position
+		var d := away.length()
+		if d < 320.0 and d > 1.0:
+			flee += away / d * 40.0
+	var pull := Vector2.ZERO
+	if not arena.active_snacks.is_empty():
+		var snack: Snack = arena.active_snacks[0]
+		if snack.position.distance_to(player.position) < 200.0:
+			pull = (snack.position - player.position).normalized() * 0.35
+	# drift home so the bot never runs to infinity
+	var home_pull := -player.position.normalized() * 0.1 if player.position.length() > 900.0 else Vector2.ZERO
+	InputRouter.joystick_vector = (flee + pull + home_pull).limit_length(1.0)
 
 
 func _kill_all() -> void:
