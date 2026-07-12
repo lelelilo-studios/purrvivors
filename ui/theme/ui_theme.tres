@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=8 format=3]
+[gd_resource type="Theme" load_steps=12 format=3]
 
 [ext_resource type="FontFile" path="res://assets/fonts/m5x7.ttf" id="1_font"]
 
@@ -108,6 +108,63 @@ shadow_color = Color(0.29, 0.196, 0.153, 0.25)
 shadow_size = 4
 shadow_offset = Vector2(0, 3)
 
+[sub_resource type="StyleBoxFlat" id="bar_bg"]
+bg_color = Color(0.29, 0.196, 0.153, 0.85)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.29, 0.196, 0.153, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="bar_fill"]
+bg_color = Color(0.965, 0.769, 0.325, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="card_normal"]
+content_margin_left = 10.0
+content_margin_top = 12.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 0.957, 0.886, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.29, 0.196, 0.153, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.29, 0.196, 0.153, 0.3)
+shadow_size = 4
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="card_hover"]
+content_margin_left = 10.0
+content_margin_top = 12.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 0.976, 0.933, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.816, 0.463, 0.231, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.29, 0.196, 0.153, 0.4)
+shadow_size = 6
+shadow_offset = Vector2(0, 4)
+
 [resource]
 default_font = ExtResource("1_font")
 default_font_size = 16
@@ -125,4 +182,15 @@ Button/styles/pressed = SubResource("btn_pressed")
 Label/colors/font_color = Color(0.29, 0.196, 0.153, 1)
 Label/font_sizes/font_size = 16
 Panel/styles/panel = SubResource("panel_cream")
+ProgressBar/styles/background = SubResource("bar_bg")
+ProgressBar/styles/fill = SubResource("bar_fill")
+Card/base_type = &"Button"
+Card/colors/font_color = Color(0.29, 0.196, 0.153, 1)
+Card/colors/font_hover_color = Color(0.29, 0.196, 0.153, 1)
+Card/colors/font_pressed_color = Color(0.29, 0.196, 0.153, 1)
+Card/styles/disabled = SubResource("card_normal")
+Card/styles/focus = SubResource("btn_focus")
+Card/styles/hover = SubResource("card_hover")
+Card/styles/normal = SubResource("card_normal")
+Card/styles/pressed = SubResource("card_hover")
 PanelContainer/styles/panel = SubResource("panel_cream")

@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scenes/run/arena.gd" id="1_arena"]
+[ext_resource type="Script" path="res://scenes/run/game_camera.gd" id="2_camera"]
+[ext_resource type="Script" path="res://scenes/run/enemy_director.gd" id="3_director"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="4_player"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="5_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/level_up_screen.tscn" id="6_levelup"]
+[ext_resource type="PackedScene" path="res://scenes/ui/pause_screen.tscn" id="7_pause"]
+[ext_resource type="PackedScene" path="res://scenes/ui/game_over_screen.tscn" id="8_gameover"]
+
+[node name="Arena" type="Node2D"]
+script = ExtResource("1_arena")
+
+[node name="Snacks" type="Node2D" parent="."]
+
+[node name="World" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Enemies" type="Node2D" parent="World"]
+y_sort_enabled = true
+
+[node name="Player" parent="World" instance=ExtResource("4_player")]
+
+[node name="Projectiles" type="Node2D" parent="."]
+
+[node name="FX" type="Node2D" parent="."]
+
+[node name="GameCamera" type="Camera2D" parent="."]
+script = ExtResource("2_camera")
+
+[node name="Director" type="Node" parent="."]
+script = ExtResource("3_director")
+
+[node name="HUDLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="HUDLayer" instance=ExtResource("5_hud")]
+
+[node name="ScreenLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="LevelUpScreen" parent="ScreenLayer" instance=ExtResource("6_levelup")]
+
+[node name="PauseScreen" parent="ScreenLayer" instance=ExtResource("7_pause")]
+
+[node name="GameOverScreen" parent="ScreenLayer" instance=ExtResource("8_gameover")]

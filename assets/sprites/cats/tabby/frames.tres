@@ -1,0 +1,533 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/east_0.png" id="1_4g1c3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/east_1.png" id="2_nckgx"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/east_2.png" id="3_1sj30"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/east_3.png" id="4_pr80v"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/east_4.png" id="5_fmo08"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/east_5.png" id="6_qcgp5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/east_6.png" id="7_6wky6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/east_7.png" id="8_vwbmj"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/north_0.png" id="9_i88u3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/north_1.png" id="10_1k0yu"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/north_2.png" id="11_5oqpc"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/north_3.png" id="12_1v4xu"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/north_4.png" id="13_wjsts"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/north_5.png" id="14_nbo8p"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/north_6.png" id="15_fd4or"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/north_7.png" id="16_bvwcs"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/north-east_0.png" id="17_lihlm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/north-east_1.png" id="18_pmwrm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/north-east_2.png" id="19_gvntm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/north-east_3.png" id="20_qb7xm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/north-east_4.png" id="21_j11c6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/north-east_5.png" id="22_230jj"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/north-east_6.png" id="23_etu4i"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/north-east_7.png" id="24_xckdj"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/north-west_0.png" id="25_r6waj"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/north-west_1.png" id="26_qi3b2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/north-west_2.png" id="27_vvnob"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/north-west_3.png" id="28_fyn6e"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/north-west_4.png" id="29_5mjnt"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/north-west_5.png" id="30_v71lb"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/north-west_6.png" id="31_sxfey"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/north-west_7.png" id="32_vo8ku"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/south_0.png" id="33_n334j"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/south_1.png" id="34_dderm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/south_2.png" id="35_1fiqw"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/south_3.png" id="36_tdtsd"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/south_4.png" id="37_l8trb"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/south_5.png" id="38_wagjs"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/south_6.png" id="39_bebf8"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/south_7.png" id="40_i3hey"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/south-east_0.png" id="41_j6rkp"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/south-east_1.png" id="42_6ufly"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/south-east_2.png" id="43_tpkc3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/south-east_3.png" id="44_e1q22"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/south-east_4.png" id="45_n6xow"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/south-east_5.png" id="46_7pxyq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/south-east_6.png" id="47_frape"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/south-east_7.png" id="48_lfxdn"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/south-west_0.png" id="49_gnhj5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/south-west_1.png" id="50_xvyth"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/south-west_2.png" id="51_a4qv7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/south-west_3.png" id="52_foy4l"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/south-west_4.png" id="53_lqqfi"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/south-west_5.png" id="54_64f60"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/south-west_6.png" id="55_jeybh"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/south-west_7.png" id="56_t4mr8"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/west_0.png" id="57_di6wh"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/west_1.png" id="58_viusf"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/west_2.png" id="59_jyaxj"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/west_3.png" id="60_hvbb8"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/west_4.png" id="61_4f1jw"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/west_5.png" id="62_xua80"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/west_6.png" id="63_bxqij"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_idle/west_7.png" id="64_nytp2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/east_0.png" id="65_wwa3e"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/east_1.png" id="66_2b2i3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/east_2.png" id="67_wbyuk"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/east_3.png" id="68_bid7y"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/east_4.png" id="69_gndq0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/east_5.png" id="70_4d1tq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/north_0.png" id="71_ualdi"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/north_1.png" id="72_hnj1w"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/north_2.png" id="73_tm7sl"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/north_3.png" id="74_dy7vc"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/north_4.png" id="75_s3maa"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/north_5.png" id="76_l4a06"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/north-east_0.png" id="77_6pjgo"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/north-east_1.png" id="78_c1wup"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/north-east_2.png" id="79_1ixkd"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/north-east_3.png" id="80_0abxp"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/north-east_4.png" id="81_1bq6d"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/north-east_5.png" id="82_rqaq3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/north-west_0.png" id="83_0hrt5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/north-west_1.png" id="84_g3uni"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/north-west_2.png" id="85_xlc0w"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/north-west_3.png" id="86_0afk7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/north-west_4.png" id="87_vprwq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/north-west_5.png" id="88_m0rcn"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/south_0.png" id="89_huxbk"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/south_1.png" id="90_mf5r1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/south_2.png" id="91_es0dy"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/south_3.png" id="92_qjmiu"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/south_4.png" id="93_bs0lh"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/south_5.png" id="94_f4hjc"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/south-east_0.png" id="95_nk47p"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/south-east_1.png" id="96_g4oqn"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/south-east_2.png" id="97_oysla"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/south-east_3.png" id="98_pkcpb"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/south-east_4.png" id="99_q4ohq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/south-east_5.png" id="100_1bxc1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/south-west_0.png" id="101_ri25s"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/south-west_1.png" id="102_vfr4q"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/south-west_2.png" id="103_3hlue"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/south-west_3.png" id="104_ycd14"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/south-west_4.png" id="105_hk2p7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/south-west_5.png" id="106_qiqvq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/west_0.png" id="107_37ggq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/west_1.png" id="108_paor4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/west_2.png" id="109_1bpa7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/west_3.png" id="110_jxiv4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/west_4.png" id="111_tacf6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cats/tabby/anim_walk/west_5.png" id="112_jn88h"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4g1c3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nckgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1sj30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pr80v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fmo08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qcgp5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6wky6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vwbmj")
+}],
+"loop": 1,
+"name": &"idle_east",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_i88u3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1k0yu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5oqpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1v4xu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wjsts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_nbo8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_fd4or")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_bvwcs")
+}],
+"loop": 1,
+"name": &"idle_north",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_lihlm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_pmwrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_gvntm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_qb7xm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_j11c6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_230jj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_etu4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_xckdj")
+}],
+"loop": 1,
+"name": &"idle_north-east",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_r6waj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_qi3b2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_vvnob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_fyn6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_5mjnt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_v71lb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_sxfey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_vo8ku")
+}],
+"loop": 1,
+"name": &"idle_north-west",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_n334j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_dderm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_1fiqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_tdtsd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_l8trb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_wagjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_bebf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_i3hey")
+}],
+"loop": 1,
+"name": &"idle_south",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_j6rkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_6ufly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_tpkc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_e1q22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_n6xow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_7pxyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_frape")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_lfxdn")
+}],
+"loop": 1,
+"name": &"idle_south-east",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("49_gnhj5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_xvyth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_a4qv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_foy4l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_lqqfi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_64f60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_jeybh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_t4mr8")
+}],
+"loop": 1,
+"name": &"idle_south-west",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("57_di6wh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_viusf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_jyaxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_hvbb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_4f1jw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_xua80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_bxqij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_nytp2")
+}],
+"loop": 1,
+"name": &"idle_west",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("65_wwa3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_2b2i3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_wbyuk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_bid7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_gndq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_4d1tq")
+}],
+"loop": 1,
+"name": &"walk_east",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("71_ualdi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_hnj1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_tm7sl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_dy7vc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_s3maa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_l4a06")
+}],
+"loop": 1,
+"name": &"walk_north",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("77_6pjgo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_c1wup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_1ixkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_0abxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_1bq6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_rqaq3")
+}],
+"loop": 1,
+"name": &"walk_north-east",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("83_0hrt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_g3uni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_xlc0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_0afk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_vprwq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_m0rcn")
+}],
+"loop": 1,
+"name": &"walk_north-west",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("89_huxbk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_mf5r1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_es0dy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_qjmiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_bs0lh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_f4hjc")
+}],
+"loop": 1,
+"name": &"walk_south",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("95_nk47p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_g4oqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_oysla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_pkcpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_q4ohq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_1bxc1")
+}],
+"loop": 1,
+"name": &"walk_south-east",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("101_ri25s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_vfr4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_3hlue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_ycd14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_hk2p7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_qiqvq")
+}],
+"loop": 1,
+"name": &"walk_south-west",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("107_37ggq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_paor4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_1bpa7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_jxiv4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_tacf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_jn88h")
+}],
+"loop": 1,
+"name": &"walk_west",
+"speed": 10.0
+}]

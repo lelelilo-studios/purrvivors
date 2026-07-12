@@ -12,13 +12,19 @@ config_version=5
 
 config/name="Purrvivors"
 config/description="A cozy-but-chaotic cat survivor-like. Eat snacks, dodge dogs, out-live the horde."
-run/main_scene="res://scenes/test/pipeline_test.tscn"
+run/main_scene="res://scenes/run/arena.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
+Balance="*res://autoload/balance.gd"
+SaveManager="*res://autoload/save_manager.gd"
+GameData="*res://autoload/game_data.gd"
+AudioManager="*res://autoload/audio_manager.gd"
 ObjectPool="*res://autoload/object_pool.gd"
+InputRouter="*res://autoload/input_router.gd"
+DevTools="*res://autoload/dev_tools.gd"
 
 [display]
 

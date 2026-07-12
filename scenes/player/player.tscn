@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_script"]
+[ext_resource type="Shader" path="res://assets/shaders/hit_flash.gdshader" id="2_shader"]
+[ext_resource type="Script" path="res://scenes/weapons/weapon_manager.gd" id="3_weapons"]
+
+[sub_resource type="ShaderMaterial" id="flash_mat"]
+shader = ExtResource("2_shader")
+
+[sub_resource type="CircleShape2D" id="body_shape"]
+radius = 9.0
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_script")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("flash_mat")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("body_shape")
+
+[node name="Weapons" type="Node2D" parent="."]
+script = ExtResource("3_weapons")
