@@ -4,7 +4,10 @@ extends Camera2D
 ## plus trauma-based screen shake. The arena feeds it the player position;
 ## built-in position smoothing does the easing.
 
-const BASE_VIEW := Vector2(640.0, 360.0)
+## World pixels to show along the SHORTER viewport axis. Touch devices are
+## physically small, so they get a closer camera than desktop monitors.
+const TARGET_SHORT_AXIS_DESKTOP := 360.0
+const TARGET_SHORT_AXIS_TOUCH := 240.0
 const MAX_SHAKE_OFFSET := 7.0
 const TRAUMA_DECAY := 1.6
 
@@ -15,6 +18,7 @@ func _ready() -> void:
 	position_smoothing_enabled = true
 	position_smoothing_speed = 8.0
 	get_viewport().size_changed.connect(_update_zoom)
+	InputRouter.touch_mode_changed.connect(func(_on: bool) -> void: _update_zoom())
 	_update_zoom()
 
 
@@ -36,7 +40,9 @@ func add_trauma(amount: float) -> void:
 
 func _update_zoom() -> void:
 	var vp := get_viewport_rect().size
-	var z := maxi(1, floori(minf(vp.x / BASE_VIEW.x, vp.y / BASE_VIEW.y)))
+	var short_axis := minf(vp.x, vp.y)
+	var target := TARGET_SHORT_AXIS_TOUCH if InputRouter.touch_mode else TARGET_SHORT_AXIS_DESKTOP
+	var z := clampi(roundi(short_axis / target), 1, 5)
 	zoom = Vector2(z, z)
 
 

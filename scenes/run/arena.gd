@@ -319,6 +319,8 @@ func _toggle_pause() -> void:
 
 
 func _on_focus_lost() -> void:
+	if DevTools.bot_mode:
+		return
 	if not run_over and not _showing_level_up and not pause_screen.visible:
 		pause_screen.open()
 
@@ -330,11 +332,15 @@ func _on_player_died() -> void:
 	AudioManager.play_sfx("defeat")
 	# A dramatic beat: the cat keels over, the dust settles, then the tally.
 	var t := create_tween()
-	t.tween_property(player.sprite, "rotation", PI * 0.5, 0.45) \
-		.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+	if player.sprite.sprite_frames != null \
+			and player.sprite.sprite_frames.has_animation(&"death_south"):
+		player.sprite.play(&"death_south")
+	else:
+		t.tween_property(player.sprite, "rotation", PI * 0.5, 0.45) \
+			.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
 	t.parallel().tween_property(player.sprite, "modulate",
-		Color(0.75, 0.7, 0.75, 0.9), 0.45)
-	t.tween_interval(0.8)
+		Color(0.82, 0.78, 0.82, 0.95), 0.6)
+	t.tween_interval(1.1)
 	t.tween_callback(func() -> void:
 		var summary := GameData.end_run(GameData.run_time)
 		game_over_screen.show_summary(summary))

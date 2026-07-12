@@ -1,19 +1,219 @@
 [gd_resource type="SpriteFrames" format=3]
 
-[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/east.png" id="1_hhshf"]
-[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/north.png" id="2_ixo6c"]
-[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/north-east.png" id="3_75oyw"]
-[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/north-west.png" id="4_atbsn"]
-[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/south.png" id="5_nc54q"]
-[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/south-east.png" id="6_0c3ds"]
-[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/south-west.png" id="7_0lyf2"]
-[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/west.png" id="8_trwca"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/east_0.png" id="1_tmthu"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/east_1.png" id="2_wn1c2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/east_2.png" id="3_b7h3c"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/east_3.png" id="4_25hj0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/east_4.png" id="5_n3tby"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/north_0.png" id="6_qx447"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/north_1.png" id="7_mh463"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/north_2.png" id="8_hg0mx"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/north_3.png" id="9_ol0u5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/north_4.png" id="10_l47bl"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/north-east_0.png" id="11_il6sk"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/north-east_1.png" id="12_tnxs6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/north-east_2.png" id="13_owpsq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/north-east_3.png" id="14_7jeyc"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/north-east_4.png" id="15_m3h8g"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/north-west_0.png" id="16_151oa"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/north-west_1.png" id="17_c2obm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/north-west_2.png" id="18_qrqh3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/north-west_3.png" id="19_gvpnh"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/north-west_4.png" id="20_iaj1s"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/south_0.png" id="21_t05e8"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/south_1.png" id="22_cdcwo"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/south_2.png" id="23_d2yag"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/south_3.png" id="24_m43ia"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/south_4.png" id="25_o4w2u"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/south-east_0.png" id="26_7n00y"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/south-east_1.png" id="27_5b8sh"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/south-east_2.png" id="28_w4lfo"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/south-east_3.png" id="29_b68ef"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/south-east_4.png" id="30_og2dt"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/south-west_0.png" id="31_33vcl"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/south-west_1.png" id="32_gmyud"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/south-west_2.png" id="33_75da1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/south-west_3.png" id="34_ygmm2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/south-west_4.png" id="35_wj4m1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/west_0.png" id="36_nwoe7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/west_1.png" id="37_m7qhw"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/west_2.png" id="38_sg23j"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/west_3.png" id="39_xe55r"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/anim_hovering_in_place_small_wings_buzzing_rapidly_bo/west_4.png" id="40_rtgn8"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/east.png" id="41_yk6ja"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/north.png" id="42_dw8ce"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/north-east.png" id="43_kcxao"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/north-west.png" id="44_08ksx"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/south.png" id="45_su015"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/south-east.png" id="46_flp3y"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/south-west.png" id="47_o0gvf"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/bee/west.png" id="48_tbfa0"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_hhshf")
+"texture": ExtResource("1_tmthu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wn1c2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b7h3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_25hj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_n3tby")
+}],
+"loop": 1,
+"name": &"hovering_in_place_small_wings_buzzing_rapidly_bo_east",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_qx447")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mh463")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hg0mx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ol0u5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_l47bl")
+}],
+"loop": 1,
+"name": &"hovering_in_place_small_wings_buzzing_rapidly_bo_north",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_il6sk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_tnxs6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_owpsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7jeyc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_m3h8g")
+}],
+"loop": 1,
+"name": &"hovering_in_place_small_wings_buzzing_rapidly_bo_north-east",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_151oa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_c2obm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_qrqh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_gvpnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_iaj1s")
+}],
+"loop": 1,
+"name": &"hovering_in_place_small_wings_buzzing_rapidly_bo_north-west",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_t05e8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_cdcwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_d2yag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_m43ia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_o4w2u")
+}],
+"loop": 1,
+"name": &"hovering_in_place_small_wings_buzzing_rapidly_bo_south",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_7n00y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_5b8sh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_w4lfo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_b68ef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_og2dt")
+}],
+"loop": 1,
+"name": &"hovering_in_place_small_wings_buzzing_rapidly_bo_south-east",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_33vcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_gmyud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_75da1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_ygmm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_wj4m1")
+}],
+"loop": 1,
+"name": &"hovering_in_place_small_wings_buzzing_rapidly_bo_south-west",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_nwoe7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_m7qhw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_sg23j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_xe55r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_rtgn8")
+}],
+"loop": 1,
+"name": &"hovering_in_place_small_wings_buzzing_rapidly_bo_west",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_yk6ja")
 }],
 "loop": 1,
 "name": &"idle_east",
@@ -21,7 +221,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ixo6c")
+"texture": ExtResource("42_dw8ce")
 }],
 "loop": 1,
 "name": &"idle_north",
@@ -29,7 +229,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_75oyw")
+"texture": ExtResource("43_kcxao")
 }],
 "loop": 1,
 "name": &"idle_north-east",
@@ -37,7 +237,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_atbsn")
+"texture": ExtResource("44_08ksx")
 }],
 "loop": 1,
 "name": &"idle_north-west",
@@ -45,7 +245,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_nc54q")
+"texture": ExtResource("45_su015")
 }],
 "loop": 1,
 "name": &"idle_south",
@@ -53,7 +253,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_0c3ds")
+"texture": ExtResource("46_flp3y")
 }],
 "loop": 1,
 "name": &"idle_south-east",
@@ -61,7 +261,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_0lyf2")
+"texture": ExtResource("47_o0gvf")
 }],
 "loop": 1,
 "name": &"idle_south-west",
@@ -69,7 +269,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_trwca")
+"texture": ExtResource("48_tbfa0")
 }],
 "loop": 1,
 "name": &"idle_west",
@@ -77,7 +277,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_hhshf")
+"texture": ExtResource("41_yk6ja")
 }],
 "loop": 1,
 "name": &"walk_east",
@@ -85,7 +285,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ixo6c")
+"texture": ExtResource("42_dw8ce")
 }],
 "loop": 1,
 "name": &"walk_north",
@@ -93,7 +293,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_75oyw")
+"texture": ExtResource("43_kcxao")
 }],
 "loop": 1,
 "name": &"walk_north-east",
@@ -101,7 +301,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_atbsn")
+"texture": ExtResource("44_08ksx")
 }],
 "loop": 1,
 "name": &"walk_north-west",
@@ -109,7 +309,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_nc54q")
+"texture": ExtResource("45_su015")
 }],
 "loop": 1,
 "name": &"walk_south",
@@ -117,7 +317,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_0c3ds")
+"texture": ExtResource("46_flp3y")
 }],
 "loop": 1,
 "name": &"walk_south-east",
@@ -125,7 +325,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_0lyf2")
+"texture": ExtResource("47_o0gvf")
 }],
 "loop": 1,
 "name": &"walk_south-west",
@@ -133,7 +333,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_trwca")
+"texture": ExtResource("48_tbfa0")
 }],
 "loop": 1,
 "name": &"walk_west",

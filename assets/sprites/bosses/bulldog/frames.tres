@@ -1,19 +1,67 @@
 [gd_resource type="SpriteFrames" format=3]
 
-[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/east.png" id="1_i8nc6"]
-[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/north.png" id="2_3swsu"]
-[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/north-east.png" id="3_l284g"]
-[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/north-west.png" id="4_4ykec"]
-[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/south.png" id="5_m7b2l"]
-[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/south-east.png" id="6_2tqib"]
-[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/south-west.png" id="7_aidnn"]
-[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/west.png" id="8_w03cg"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/east.png" id="1_4e05y"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/north.png" id="2_kn3ml"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/north-east.png" id="3_sjfji"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/north-west.png" id="4_ut3bt"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/south.png" id="5_ux301"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/south-east.png" id="6_4gkl8"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/south-west.png" id="7_olpwy"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/west.png" id="8_xuai1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/east_0.png" id="9_oxd1n"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/east_1.png" id="10_gn1jq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/east_2.png" id="11_a35te"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/east_3.png" id="12_d0m1s"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/east_4.png" id="13_teygf"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/east_5.png" id="14_i475g"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/north_0.png" id="15_hhu26"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/north_1.png" id="16_0n7c3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/north_2.png" id="17_vy0em"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/north_3.png" id="18_pqktr"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/north_4.png" id="19_5adec"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/north_5.png" id="20_b1bat"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/north-east_0.png" id="21_vgap0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/north-east_1.png" id="22_k0ode"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/north-east_2.png" id="23_xo7q0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/north-east_3.png" id="24_gx165"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/north-east_4.png" id="25_xlm8i"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/north-east_5.png" id="26_v7104"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/north-west_0.png" id="27_oskfj"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/north-west_1.png" id="28_2qpap"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/north-west_2.png" id="29_barcy"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/north-west_3.png" id="30_6ndgn"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/north-west_4.png" id="31_5ogvc"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/north-west_5.png" id="32_6ou0e"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/south_0.png" id="33_0b0ib"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/south_1.png" id="34_s64wa"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/south_2.png" id="35_akcqa"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/south_3.png" id="36_fj0qs"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/south_4.png" id="37_acctr"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/south_5.png" id="38_aiobl"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/south-east_0.png" id="39_1526b"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/south-east_1.png" id="40_rymqe"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/south-east_2.png" id="41_0kotl"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/south-east_3.png" id="42_d6e1j"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/south-east_4.png" id="43_2qvs6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/south-east_5.png" id="44_g4uef"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/south-west_0.png" id="45_hac2o"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/south-west_1.png" id="46_ydq4r"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/south-west_2.png" id="47_dwufe"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/south-west_3.png" id="48_wtm8d"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/south-west_4.png" id="49_riqvy"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/south-west_5.png" id="50_j1kb1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/west_0.png" id="51_i4w8v"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/west_1.png" id="52_m7vxe"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/west_2.png" id="53_8gbgq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/west_3.png" id="54_2l61x"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/west_4.png" id="55_beyxu"]
+[ext_resource type="Texture2D" path="res://assets/sprites/bosses/bulldog/anim_walk/west_5.png" id="56_ekgu5"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_i8nc6")
+"texture": ExtResource("1_4e05y")
 }],
 "loop": 1,
 "name": &"idle_east",
@@ -21,7 +69,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_3swsu")
+"texture": ExtResource("2_kn3ml")
 }],
 "loop": 1,
 "name": &"idle_north",
@@ -29,7 +77,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_l284g")
+"texture": ExtResource("3_sjfji")
 }],
 "loop": 1,
 "name": &"idle_north-east",
@@ -37,7 +85,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_4ykec")
+"texture": ExtResource("4_ut3bt")
 }],
 "loop": 1,
 "name": &"idle_north-west",
@@ -45,7 +93,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_m7b2l")
+"texture": ExtResource("5_ux301")
 }],
 "loop": 1,
 "name": &"idle_south",
@@ -53,7 +101,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_2tqib")
+"texture": ExtResource("6_4gkl8")
 }],
 "loop": 1,
 "name": &"idle_south-east",
@@ -61,7 +109,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_aidnn")
+"texture": ExtResource("7_olpwy")
 }],
 "loop": 1,
 "name": &"idle_south-west",
@@ -69,7 +117,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_w03cg")
+"texture": ExtResource("8_xuai1")
 }],
 "loop": 1,
 "name": &"idle_west",
@@ -77,65 +125,185 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_i8nc6")
+"texture": ExtResource("9_oxd1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gn1jq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_a35te")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_d0m1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_teygf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_i475g")
 }],
 "loop": 1,
 "name": &"walk_east",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_3swsu")
+"texture": ExtResource("15_hhu26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_0n7c3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_vy0em")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_pqktr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_5adec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_b1bat")
 }],
 "loop": 1,
 "name": &"walk_north",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_l284g")
+"texture": ExtResource("21_vgap0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_k0ode")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_xo7q0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_gx165")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_xlm8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_v7104")
 }],
 "loop": 1,
 "name": &"walk_north-east",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_4ykec")
+"texture": ExtResource("27_oskfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_2qpap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_barcy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_6ndgn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_5ogvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_6ou0e")
 }],
 "loop": 1,
 "name": &"walk_north-west",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_m7b2l")
+"texture": ExtResource("33_0b0ib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_s64wa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_akcqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_fj0qs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_acctr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_aiobl")
 }],
 "loop": 1,
 "name": &"walk_south",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_2tqib")
+"texture": ExtResource("39_1526b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_rymqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_0kotl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_d6e1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_2qvs6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_g4uef")
 }],
 "loop": 1,
 "name": &"walk_south-east",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_aidnn")
+"texture": ExtResource("45_hac2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_ydq4r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_dwufe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_wtm8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_riqvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_j1kb1")
 }],
 "loop": 1,
 "name": &"walk_south-west",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_w03cg")
+"texture": ExtResource("51_i4w8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_m7vxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_8gbgq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_2l61x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_beyxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_ekgu5")
 }],
 "loop": 1,
 "name": &"walk_west",
-"speed": 5.0
+"speed": 10.0
 }]

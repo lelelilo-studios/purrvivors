@@ -50,11 +50,43 @@ func _ready() -> void:
 			var xp := int(arg.get_slice("=", 1))
 			get_tree().create_timer(1.5).timeout.connect(
 				func() -> void: GameData.gain_xp(xp))
+		elif arg.begins_with("--cat="):
+			var cat := arg.get_slice("=", 1)
+			if not GameData.is_cat_unlocked(cat):
+				GameData.meta.unlocked_cats.append(cat)
+			GameData.meta.selected_cat = cat
+		elif arg.begins_with("--show-results="):
+			var tier := int(arg.get_slice("=", 1))
+			get_tree().create_timer(2.0).timeout.connect(func() -> void:
+				var arena := get_tree().get_first_node_in_group(&"arena") as Arena
+				if arena == null:
+					return
+				arena.run_over = true
+				arena.game_over_screen.show_summary({
+					"tier": tier, "tier_name": Balance.WIN_TIER_NAMES[tier],
+					"bosses_beaten": tier, "kills": 431, "survived_sec": 754.0,
+					"coins": 118, "bonus": Balance.WIN_TIER_COIN_BONUS[tier],
+					"score": 12840, "new_best": tier >= 2, "cat": "tabby"}))
+		elif arg == "--show-pause":
+			get_tree().create_timer(2.0).timeout.connect(func() -> void:
+				var arena := get_tree().get_first_node_in_group(&"arena") as Arena
+				if arena != null:
+					arena.pause_screen.open())
 		elif arg == "--touch":
 			InputRouter.touch_mode = true
 			InputRouter.touch_mode_changed.emit(true)
 		elif arg == "--bot":
 			bot_mode = true
+			var status := Timer.new()
+			status.wait_time = 10.0
+			status.autostart = true
+			status.timeout.connect(func() -> void:
+				var arena := get_tree().get_first_node_in_group(&"arena") as Arena
+				if arena != null and not arena.run_over:
+					print("[bot-status] t=%03.0fs hp=%d lv=%d enemies=%d paused=%s" % [
+						GameData.run_time, arena.player.hp, GameData.level,
+						arena.active_enemies.size(), get_tree().paused]))
+			add_child(status)
 			GameData.run_ended.connect(func(summary: Dictionary) -> void:
 				print("[bot] tier=%d (%s) survived=%.0fs kills=%d level=%d coins=%d score=%d" % [
 					summary.tier, summary.tier_name, summary.survived_sec,

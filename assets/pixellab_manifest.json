@@ -1,49 +1,43 @@
 {
-  "_comment": "PixelLab asset registry. Keep IDs so later phases can call animate_character / animate_object / create_character_state on existing assets instead of regenerating. Update on every accepted generation.",
+  "_comment": "PixelLab asset registry. IDs let later work call animate_character / animate_object / create_character_state on existing assets instead of regenerating. Update on every accepted generation.",
   "style_anchor": "characters.tabby",
   "characters": {
-    "tabby": {
-      "id": "dc79260b-2643-4dba-85d2-019f8c702754",
-      "role": "playable cat (anchor)",
-      "mode": "pro",
-      "template": "cat",
-      "size_px": 48,
-      "canvas_px": 84,
-      "view": "low top-down",
-      "directions": 8,
-      "animations": [],
-      "cost_generations": 20
-    },
-    "dog": {
-      "id": "00b173ec-7ec4-4bc5-a7a6-c22bca2d3828",
-      "role": "enemy: basic chaser",
-      "mode": "pro",
-      "template": "dog",
-      "size_px": 48,
-      "canvas_px": 84,
-      "view": "low top-down",
-      "directions": 8,
-      "animations": [],
-      "cost_generations": 20
-    }
+    "tabby": {"id": "dc79260b-2643-4dba-85d2-019f8c702754", "role": "playable cat (anchor)", "size_px": 48, "anims": ["walk", "idle"]},
+    "chonk": {"id": "252d16f3-ce55-44eb-8870-2360fa508667", "role": "playable cat", "size_px": 52, "anims": ["walk"]},
+    "kitten": {"id": "4fd5e90b-8545-4e9b-b92b-d09ab24185d2", "role": "playable cat", "size_px": 40, "anims": ["walk"]},
+    "dog": {"id": "00b173ec-7ec4-4bc5-a7a6-c22bca2d3828", "role": "enemy chaser", "size_px": 48, "anims": ["walk"]},
+    "mouse": {"id": "632756e4-49f7-4098-ab99-65d384f07387", "role": "enemy swarmer", "size_px": 26, "anims": ["walk"]},
+    "raccoon": {"id": "96d48dc9-d295-4f92-a03d-0e0261824bf9", "role": "enemy erratic chaser", "size_px": 44, "anims": ["walk"]},
+    "rival_cat": {"id": "ea089dfa-c40d-4577-a1eb-45328f7c1f52", "role": "enemy dasher (v2; v1 6756593b rejected: off-model brown)", "size_px": 48, "anims": ["walk"]},
+    "boss_bulldog": {"id": "4d716fda-096f-4fb8-9776-58bc1f6913d3", "role": "boss 5:00", "size_px": 96, "anims": ["walk"]},
+    "boss_fatcat": {"id": "6d873ec1-402b-4201-97fc-435d6aab9c7f", "role": "boss 15:00", "size_px": 96, "anims": ["walk (in flight)"]}
   },
   "objects": {
-    "cookie": {
-      "id": "0e259eb5-11c1-469d-9abe-58b2fb9004f4",
-      "role": "snack pickup: small XP",
-      "size_px": 32,
-      "source_review_pack": "204c60e3-58a0-4e85-a7ef-88ca5b795138",
-      "source_frame": 31,
-      "alternates": {
-        "frame_3": "f7ce2823-69e1-4e04-afe9-0d4a7c528807",
-        "frame_58": "9e066522-e05e-4b42-9380-e6ad61b04dbf"
-      },
-      "cost_generations": 20
-    }
+    "bee": {"id": "63fb2fc1-9095-4784-9f22-12657651b4bc", "type": "8-direction", "size_px": 32},
+    "crow": {"id": "06da664a-2ea3-4997-8fcf-d59e0bde81b7", "type": "8-direction", "size_px": 40},
+    "boss_vacuum": {"id": "3f4a64d0-6abc-4d2e-a670-6b4f28c6a53a", "type": "8-direction", "size_px": 96},
+    "roomba": {"id": "b49bc6a7-bc2b-4e45-9b30-4923d8253782", "alternates": ["6aaaeee2-d2dc-40f6-91a9-c16e6d96805c", "d12996e5-b1ac-4f8f-ae67-e52123a1ea54"]},
+    "dust_bunny": {"id": "8307b585-ffbd-4f35-8dcf-27f2de443a6b", "alternates": ["1d304057-22e1-4a15-b875-15fae893ff5e", "d60f4f96-4124-4f9f-9069-155d404056f0"]},
+    "sprinkler": {"id": "8490c8eb-30d5-48e6-b50e-78d20d13a4cd", "alternates": ["38c60a60-9533-4eed-8815-0475d0af2f20", "b4b9dd06-deda-46a5-8c65-0b9f91553d70"]},
+    "cookie": {"id": "0e259eb5-11c1-469d-9abe-58b2fb9004f4"},
+    "fx_pack_keepers": "tag fx-pack-1 (hairball, sparkle, fish, thrown_fish, sushi, milk, coin, laser_dot, claw_swipe, meow_ring, heart, golden_cookie, yarn_ball)",
+    "props": "tag props-1 (food_bowl, water_bowl, food_bag, cardboard_box, potted_plant, cat_tower, rug_patch, garden_bush, hydrant)",
+    "icons": "tag icons-1 (catnip, collar, bowl, nine_lives ghost, lucky_paw, paw, toe_beans, whisker, bell, stretch, catnap, water_drop, fish_skeleton, star, 3 paw medals, cafe_mug, cupcake, mouse_toy, feather_wand)"
+  },
+  "tilesets": {
+    "kitchen": "10c9d34b-55a8-4e49-bd02-74628888985f",
+    "backyard": "dfa94449-0429-42fa-9e69-6dfffc612ffa",
+    "living_room": "f4138392-8aa3-46ac-9b61-2a238c7025fd (v3; v1 1100f33a too loud, v2 2bcac880 too busy)"
+  },
+  "ui": {
+    "kit_panel": "55a81588-45d8-4cbd-bd8a-7c59316c3c69",
+    "button_orange": "13af1fb4-a65e-47cb-a622-7978ee265391",
+    "title_background": "7923001c-e789-4c06-aa67-dac60aff2a6c (map object - re-download expires 8h)"
   },
   "budget": {
     "pool_total": 5000,
-    "spent": 60,
-    "spend_cap_75pct": 3750
+    "spent_as_of_2026-07-12": 552,
+    "spend_cap_75pct": 3750,
+    "regens_used_for": ["rival_cat v2", "living_room tiles x2"]
   }
 }
