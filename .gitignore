@@ -10,6 +10,7 @@ export/
 *.exe
 *.pck
 *.zip
+!docs/*.pck
 
 # OS / editor noise
 .DS_Store
