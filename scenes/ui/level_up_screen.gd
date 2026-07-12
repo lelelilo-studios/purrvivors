@@ -20,6 +20,10 @@ func present(options: Array[Dictionary]) -> void:
 	get_tree().paused = true
 	visible = true
 	subtitle.text = CHEEKY_LINES.pick_random()
+	if DevTools.auto_pick:
+		var t := get_tree().create_timer(0.3, true)
+		t.timeout.connect(_choose.bind(options[0]))
+		return
 	for child in cards_box.get_children():
 		child.queue_free()
 	for i in options.size():

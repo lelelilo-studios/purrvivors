@@ -65,5 +65,32 @@ func nearest(pos: Vector2, max_radius: float) -> Object:
 	return best
 
 
+## Allocation-free separation: accumulated normalized push away from up to
+## `max_samples` neighbors within `radius`. Hot path for 300+ enemies.
+func separation_push(item: Object, pos: Vector2, radius: float, max_samples := 5) -> Vector2:
+	var push := Vector2.ZERO
+	var r2 := radius * radius
+	var sampled := 0
+	var min_cx := int(floorf((pos.x - radius) / cell_size))
+	var max_cx := int(floorf((pos.x + radius) / cell_size))
+	var min_cy := int(floorf((pos.y - radius) / cell_size))
+	var max_cy := int(floorf((pos.y + radius) / cell_size))
+	for cx in range(min_cx, max_cx + 1):
+		for cy in range(min_cy, max_cy + 1):
+			var cell: Array = _cells.get(Vector2i(cx, cy), [])
+			for other in cell:
+				if other == item:
+					continue
+				var away: Vector2 = pos - other.position
+				var d2 := away.length_squared()
+				if d2 < r2 and d2 > 0.0001:
+					var d := sqrt(d2)
+					push += (away / d) * (1.0 - d / radius)
+					sampled += 1
+					if sampled >= max_samples:
+						return push
+	return push
+
+
 func _key(pos: Vector2) -> Vector2i:
 	return Vector2i(int(floorf(pos.x / cell_size)), int(floorf(pos.y / cell_size)))

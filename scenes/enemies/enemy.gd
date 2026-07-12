@@ -11,8 +11,16 @@ const DIRECTIONS := [
 
 static var _frames_cache: Dictionary = {}
 
+# Behavior enum - the horde loop must never string-compare per frame.
+enum Behavior { SWARMER, SWARMER_WAVE, CHASER, CHASER_ERRATIC, TANK, DASHER, RANGED }
+const BEHAVIOR_IDS := {
+	"swarmer": Behavior.SWARMER, "swarmer_wave": Behavior.SWARMER_WAVE,
+	"chaser": Behavior.CHASER, "chaser_erratic": Behavior.CHASER_ERRATIC,
+	"tank": Behavior.TANK, "dasher": Behavior.DASHER, "ranged": Behavior.RANGED,
+}
+
 var type_key := ""
-var behavior := "chaser"
+var behavior_id := Behavior.CHASER
 var max_hp := 1.0
 var hp := 1.0
 var speed := 50.0
@@ -27,6 +35,17 @@ var def: Dictionary = {}
 
 var velocity := Vector2.ZERO
 var knockback := Vector2.ZERO
+var cached_push := Vector2.ZERO
+var move_vec := Vector2.ZERO      # steering result, recomputed on parity frames
+# dasher/ranged tuning pulled out of `def` at setup (no dict hits in the loop)
+var dash_speed := 0.0
+var dash_windup := 0.0
+var dash_time := 0.0
+var dash_cooldown := 0.0
+var keep_distance := 0.0
+var shoot_interval := 0.0
+var projectile_damage := 0
+var projectile_speed := 0.0
 var contact_cooldown := 0.0
 var facing_index := 2          # south
 var anim_name := "walk"
@@ -48,7 +67,17 @@ func _ready() -> void:
 func setup(key: String, enemy_def: Dictionary, pos: Vector2, elite: bool, scalar: float) -> void:
 	type_key = key
 	def = enemy_def
-	behavior = def.behavior
+	behavior_id = BEHAVIOR_IDS[def.behavior]
+	dash_speed = float(def.get("dash_speed", 0.0))
+	dash_windup = float(def.get("dash_windup", 0.0))
+	dash_time = float(def.get("dash_time", 0.0))
+	dash_cooldown = float(def.get("dash_cooldown", 0.0))
+	keep_distance = float(def.get("keep_distance", 0.0))
+	shoot_interval = float(def.get("shoot_interval", 0.0))
+	projectile_damage = int(def.get("projectile_damage", 0))
+	projectile_speed = float(def.get("projectile_speed", 0.0))
+	move_vec = Vector2.ZERO
+	cached_push = Vector2.ZERO
 	max_hp = float(def.hp) * scalar * (Balance.ELITE_HP_MULT if elite else 1.0)
 	hp = max_hp
 	speed = float(def.speed)

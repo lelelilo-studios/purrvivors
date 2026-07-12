@@ -8,6 +8,7 @@ extends Node
 ##   F4 +200 Fish Coins  |  F5 +1 level  |  F6 spawn next boss (phase 7)
 
 var god_mode := false
+var auto_pick := false
 
 var _screenshot_path := ""
 
@@ -19,6 +20,22 @@ func _ready() -> void:
 			delay = float(arg.get_slice("=", 1))
 		elif arg == "--god":
 			god_mode = true
+		elif arg == "--auto-pick":
+			auto_pick = true
+		elif arg == "--perf-log":
+			var timer := Timer.new()
+			timer.wait_time = 5.0
+			timer.autostart = true
+			timer.timeout.connect(func() -> void:
+				var arena := get_tree().current_scene as Arena
+				if arena == null:
+					return
+				print("[perf] fps=%d enemies=%d snacks=%d director_us=%d snacks_us=%d fx=%d proj=%d" % [
+					Engine.get_frames_per_second(), arena.active_enemies.size(),
+					arena.active_snacks.size(), arena.perf_director_us,
+					arena.perf_snacks_us, arena.fx_container.get_child_count(),
+					arena.projectile_container.get_child_count()]))
+			add_child(timer)
 	for arg: String in OS.get_cmdline_user_args():
 		if arg.begins_with("--screenshot="):
 			_screenshot_path = arg.get_slice("=", 1)

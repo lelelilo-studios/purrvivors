@@ -21,6 +21,10 @@ var _pending_level_ups := 0
 var _showing_level_up := false
 var _hitstopping := false
 
+# perf instrumentation (read by DevTools --perf-log)
+var perf_director_us := 0
+var perf_snacks_us := 0
+
 @onready var player: Player = $World/Player
 @onready var camera: GameCamera = $GameCamera
 @onready var director: EnemyDirector = $Director
@@ -55,8 +59,12 @@ func _physics_process(delta: float) -> void:
 		return
 	GameData.add_run_time(delta)
 	camera.position = player.position
+	var t0 := Time.get_ticks_usec()
 	director.update(delta)
+	var t1 := Time.get_ticks_usec()
 	_update_snacks(delta)
+	perf_snacks_us = Time.get_ticks_usec() - t1
+	perf_director_us = t1 - t0
 
 
 func _unhandled_input(event: InputEvent) -> void:

@@ -2,8 +2,12 @@ class_name EnemyDirector
 extends Node
 ## The horde conductor. Spawns escalating waves (rate, pack size, tier mix,
 ## elites, surges, pincers - all from Balance) and updates every enemy in
-## ONE loop: steering, separation via the spatial grid, dashes, ranged fire,
-## contact damage. No physics bodies anywhere in the swarm.
+## ONE loop with no physics bodies.
+##
+## Perf scheme (300+ enemies on weak hardware): enemies alternate between a
+## "steering" frame (full AI: target dir, separation, facing, contact) and
+## an "integrate" frame (position += cached move). The spatial grid rebuilds
+## every other frame. AI timers tick with 2x delta to stay real-time.
 
 const ENEMY_SCENE := preload("res://scenes/enemies/enemy.tscn")
 const ENEMY_PROJECTILE_SCENE := preload("res://scenes/enemies/enemy_projectile.tscn")
@@ -19,6 +23,7 @@ const DASH := 2
 const RECOVER := 3
 
 var arena: Node2D
+var frame_parity := 0
 var spawn_timer := 1.0
 var surge_timer := Balance.SURGE_INTERVAL_SEC
 var surge_left := 0.0
@@ -118,67 +123,67 @@ func _spawn_position() -> Vector2:
 # ----------------------------- the horde loop ------------------------------
 
 func _update_enemies(delta: float) -> void:
+	frame_parity = 1 - frame_parity
 	var grid: SpatialGrid = arena.enemy_grid
-	grid.clear()
-	for e: Enemy in arena.active_enemies:
-		grid.insert(e, e.position)
+	if frame_parity == 0:
+		grid.clear()
+		for e: Enemy in arena.active_enemies:
+			grid.insert(e, e.position)
 
 	var player: Player = arena.player
 	var player_pos := player.position
+	var dt2 := delta * 2.0   # AI timers tick on alternate frames
 
-	for e: Enemy in arena.active_enemies:
-		var to_player := player_pos - e.position
-		var dist := to_player.length()
-		var dir := to_player / maxf(dist, 0.001)
-		var move := Vector2.ZERO
+	for i in arena.active_enemies.size():
+		var e: Enemy = arena.active_enemies[i]
 
-		match e.behavior:
-			"swarmer", "chaser", "tank":
-				move = dir * e.speed
-			"swarmer_wave":
-				# Weave sideways while closing in (bees).
-				e.wave_phase += delta * 6.0
-				var side := Vector2(-dir.y, dir.x) * sin(e.wave_phase) * 0.6
-				move = (dir + side).normalized() * e.speed
-			"chaser_erratic":
-				e.wave_phase += delta * 2.2
-				var wobble := Vector2.from_angle(e.wave_phase * 2.7) * 0.45
-				move = (dir + wobble).normalized() * e.speed
-			"dasher":
-				move = _dasher_move(e, dir, dist, delta)
-			"ranged":
-				move = _ranged_move(e, dir, dist, delta)
+		if (i & 1) == frame_parity:
+			# ---- steering frame: full AI ----
+			var to_player := player_pos - e.position
+			var dist := to_player.length()
+			var dir := to_player / maxf(dist, 0.001)
 
-		# Separation: shove away from packed neighbors (sampled, cheap).
-		var push := Vector2.ZERO
-		for other in grid.query_radius(e.position, SEPARATION_RADIUS):
-			if other == e:
-				continue
-			var away: Vector2 = e.position - other.position
-			var d := away.length()
-			if d > 0.01:
-				push += away / d * (1.0 - d / SEPARATION_RADIUS)
-		move += push * SEPARATION_PUSH
+			match e.behavior_id:
+				Enemy.Behavior.SWARMER, Enemy.Behavior.CHASER, Enemy.Behavior.TANK:
+					e.move_vec = dir * e.speed
+				Enemy.Behavior.SWARMER_WAVE:
+					e.wave_phase += dt2 * 6.0
+					var side := Vector2(-dir.y, dir.x) * sin(e.wave_phase) * 0.6
+					e.move_vec = (dir + side).normalized() * e.speed
+				Enemy.Behavior.CHASER_ERRATIC:
+					e.wave_phase += dt2 * 2.2
+					var wobble := Vector2.from_angle(e.wave_phase * 2.7) * 0.45
+					e.move_vec = (dir + wobble).normalized() * e.speed
+				Enemy.Behavior.DASHER:
+					e.move_vec = _dasher_move(e, dir, dist, dt2)
+				Enemy.Behavior.RANGED:
+					e.move_vec = _ranged_move(e, dir, dist, dt2)
 
-		e.position += (move + e.knockback) * delta
+			e.cached_push = grid.separation_push(e, e.position, SEPARATION_RADIUS)
+			if e.state != WINDUP:
+				var face := dir
+				if e.behavior_id == Enemy.Behavior.RANGED and dist < e.keep_distance:
+					face = -dir
+				e.face_towards(face)
+
+			# Contact damage with per-enemy cooldown.
+			e.contact_cooldown -= dt2
+			if e.contact_cooldown <= 0.0 and dist < e.contact_radius + Balance.PLAYER_CONTACT_RADIUS:
+				player.take_hit(e.damage, e.position)
+				e.contact_cooldown = 0.8
+
+		# ---- every frame: integrate ----
+		e.position += (e.move_vec + e.cached_push * SEPARATION_PUSH + e.knockback) * delta
 		e.knockback = e.knockback.lerp(Vector2.ZERO, KNOCKBACK_DECAY * delta)
-		if e.state != WINDUP:
-			e.face_towards(dir if e.behavior != "ranged" else -dir if dist < float(e.def.get("keep_distance", 0.0)) else dir)
-
-		# Contact damage with per-enemy cooldown.
-		e.contact_cooldown -= delta
-		if e.contact_cooldown <= 0.0 and dist < e.contact_radius + Balance.PLAYER_CONTACT_RADIUS:
-			player.take_hit(e.damage, e.position)
-			e.contact_cooldown = 0.8
 
 
-func _dasher_move(e: Enemy, dir: Vector2, dist: float, delta: float) -> Vector2:
-	e.state_timer -= delta
+func _dasher_move(e: Enemy, dir: Vector2, dist: float, dt: float) -> Vector2:
+	e.state_timer -= dt
 	match e.state:
 		ROAM:
 			if dist < 150.0 and e.state_timer <= 0.0:
 				e.state = WINDUP
-				e.state_timer = float(e.def.dash_windup)
+				e.state_timer = e.dash_windup
 				e.velocity = dir   # lock aim at windup start
 				return Vector2.ZERO
 			return dir * e.speed
@@ -188,7 +193,7 @@ func _dasher_move(e: Enemy, dir: Vector2, dist: float, delta: float) -> Vector2:
 				Color(1.6, 0.7, 0.7), 0.5 + 0.5 * sin(e.state_timer * 30.0))
 			if e.state_timer <= 0.0:
 				e.state = DASH
-				e.state_timer = float(e.def.dash_time)
+				e.state_timer = e.dash_time
 				e.velocity = (arena.player.position - e.position).normalized()
 				e.sprite.modulate = Color.WHITE
 				AudioManager.play_sfx("dash", 0.15)
@@ -196,8 +201,8 @@ func _dasher_move(e: Enemy, dir: Vector2, dist: float, delta: float) -> Vector2:
 		DASH:
 			if e.state_timer <= 0.0:
 				e.state = RECOVER
-				e.state_timer = float(e.def.dash_cooldown)
-			return e.velocity * float(e.def.dash_speed)
+				e.state_timer = e.dash_cooldown
+			return e.velocity * e.dash_speed
 		RECOVER:
 			if e.state_timer <= 0.0:
 				e.state = ROAM
@@ -206,17 +211,15 @@ func _dasher_move(e: Enemy, dir: Vector2, dist: float, delta: float) -> Vector2:
 	return Vector2.ZERO
 
 
-func _ranged_move(e: Enemy, dir: Vector2, dist: float, delta: float) -> Vector2:
-	e.shoot_timer -= delta
-	if e.shoot_timer <= 0.0 and dist < float(e.def.keep_distance) * 1.6:
-		e.shoot_timer = float(e.def.shoot_interval)
+func _ranged_move(e: Enemy, dir: Vector2, dist: float, dt: float) -> Vector2:
+	e.shoot_timer -= dt
+	if e.shoot_timer <= 0.0 and dist < e.keep_distance * 1.6:
+		e.shoot_timer = e.shoot_interval
 		var projectile: Node2D = ObjectPool.acquire(ENEMY_PROJECTILE_SCENE)
 		arena.projectile_container.add_child(projectile)
-		projectile.launch(arena, e.position, dir * float(e.def.projectile_speed),
-			int(e.def.projectile_damage))
-	var keep := float(e.def.keep_distance)
-	if dist > keep * 1.15:
+		projectile.launch(arena, e.position, dir * e.projectile_speed, e.projectile_damage)
+	if dist > e.keep_distance * 1.15:
 		return dir * e.speed
-	if dist < keep * 0.85:
+	if dist < e.keep_distance * 0.85:
 		return -dir * e.speed
 	return Vector2.ZERO
