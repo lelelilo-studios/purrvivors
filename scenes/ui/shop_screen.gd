@@ -31,9 +31,19 @@ func _build_item(upgrade_id: String) -> PanelContainer:
 	vbox.add_theme_constant_override(&"separation", 4)
 	panel.add_child(vbox)
 
+	var header := HBoxContainer.new()
+	header.add_theme_constant_override(&"separation", 8)
+	vbox.add_child(header)
+	if def.has("icon") and ResourceLoader.exists(def.icon):
+		var icon := TextureRect.new()
+		icon.texture = load(def.icon)
+		icon.custom_minimum_size = Vector2(28, 28)
+		icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		icon.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+		header.add_child(icon)
 	var title := Label.new()
 	title.text = def.display_name
-	vbox.add_child(title)
+	header.add_child(title)
 
 	var flavor := Label.new()
 	flavor.text = def.flavor

@@ -16,6 +16,8 @@ script = ExtResource("1_arena")
 [node name="Ground" type="TileMapLayer" parent="."]
 script = ExtResource("0_ground")
 
+[node name="Decor" type="Node2D" parent="."]
+
 [node name="Snacks" type="Node2D" parent="."]
 
 [node name="World" type="Node2D" parent="."]
@@ -37,6 +39,7 @@ script = ExtResource("2_camera")
 script = ExtResource("3_director")
 
 [node name="HUDLayer" type="CanvasLayer" parent="."]
+layer = 20
 
 [node name="HUD" parent="HUDLayer" instance=ExtResource("5_hud")]
 

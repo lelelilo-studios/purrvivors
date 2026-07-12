@@ -1,19 +1,67 @@
 [gd_resource type="SpriteFrames" format=3]
 
-[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/east.png" id="1_gnutm"]
-[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/north.png" id="2_rm1by"]
-[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/north-east.png" id="3_3xcat"]
-[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/north-west.png" id="4_4sa0j"]
-[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/south.png" id="5_qju1l"]
-[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/south-east.png" id="6_a65fw"]
-[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/south-west.png" id="7_g5mob"]
-[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/west.png" id="8_h5o1q"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/east.png" id="1_0fhmk"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/north.png" id="2_n8hwy"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/north-east.png" id="3_rhuvw"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/north-west.png" id="4_tj3u6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/south.png" id="5_a5njo"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/south-east.png" id="6_7s0o2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/south-west.png" id="7_cirpi"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/west.png" id="8_oc40i"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/east_0.png" id="9_iynra"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/east_1.png" id="10_2ubeq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/east_2.png" id="11_awmxa"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/east_3.png" id="12_2wjsv"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/east_4.png" id="13_4y52b"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/east_5.png" id="14_i06m2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/north_0.png" id="15_neeeq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/north_1.png" id="16_ndpt2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/north_2.png" id="17_ltl2f"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/north_3.png" id="18_h8pnj"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/north_4.png" id="19_6uln1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/north_5.png" id="20_8qnc6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/north-east_0.png" id="21_kns0c"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/north-east_1.png" id="22_1w0h4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/north-east_2.png" id="23_gp0nt"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/north-east_3.png" id="24_xsc30"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/north-east_4.png" id="25_66p25"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/north-east_5.png" id="26_tb81q"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/north-west_0.png" id="27_mey8o"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/north-west_1.png" id="28_adfns"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/north-west_2.png" id="29_mvtlm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/north-west_3.png" id="30_k01up"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/north-west_4.png" id="31_bw31w"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/north-west_5.png" id="32_bcyq0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/south_0.png" id="33_rcwg4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/south_1.png" id="34_4spqa"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/south_2.png" id="35_xyko0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/south_3.png" id="36_266cw"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/south_4.png" id="37_t42c5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/south_5.png" id="38_58gd3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/south-east_0.png" id="39_gchjm"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/south-east_1.png" id="40_dohwp"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/south-east_2.png" id="41_gphhq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/south-east_3.png" id="42_le4ac"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/south-east_4.png" id="43_dmtkx"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/south-east_5.png" id="44_rqx40"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/south-west_0.png" id="45_qd51c"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/south-west_1.png" id="46_5qh2v"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/south-west_2.png" id="47_kbmtf"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/south-west_3.png" id="48_4dd38"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/south-west_4.png" id="49_tqkc1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/south-west_5.png" id="50_yuxn7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/west_0.png" id="51_17fvq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/west_1.png" id="52_h4dqi"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/west_2.png" id="53_iam20"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/west_3.png" id="54_p40cs"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/west_4.png" id="55_6y0ux"]
+[ext_resource type="Texture2D" path="res://assets/sprites/enemies/raccoon/anim_walk/west_5.png" id="56_24bh8"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_gnutm")
+"texture": ExtResource("1_0fhmk")
 }],
 "loop": 1,
 "name": &"idle_east",
@@ -21,7 +69,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_rm1by")
+"texture": ExtResource("2_n8hwy")
 }],
 "loop": 1,
 "name": &"idle_north",
@@ -29,7 +77,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_3xcat")
+"texture": ExtResource("3_rhuvw")
 }],
 "loop": 1,
 "name": &"idle_north-east",
@@ -37,7 +85,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_4sa0j")
+"texture": ExtResource("4_tj3u6")
 }],
 "loop": 1,
 "name": &"idle_north-west",
@@ -45,7 +93,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_qju1l")
+"texture": ExtResource("5_a5njo")
 }],
 "loop": 1,
 "name": &"idle_south",
@@ -53,7 +101,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_a65fw")
+"texture": ExtResource("6_7s0o2")
 }],
 "loop": 1,
 "name": &"idle_south-east",
@@ -61,7 +109,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_g5mob")
+"texture": ExtResource("7_cirpi")
 }],
 "loop": 1,
 "name": &"idle_south-west",
@@ -69,7 +117,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_h5o1q")
+"texture": ExtResource("8_oc40i")
 }],
 "loop": 1,
 "name": &"idle_west",
@@ -77,65 +125,185 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_gnutm")
+"texture": ExtResource("9_iynra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2ubeq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_awmxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2wjsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_4y52b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_i06m2")
 }],
 "loop": 1,
 "name": &"walk_east",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_rm1by")
+"texture": ExtResource("15_neeeq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ndpt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ltl2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_h8pnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_6uln1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_8qnc6")
 }],
 "loop": 1,
 "name": &"walk_north",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_3xcat")
+"texture": ExtResource("21_kns0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_1w0h4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_gp0nt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_xsc30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_66p25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_tb81q")
 }],
 "loop": 1,
 "name": &"walk_north-east",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_4sa0j")
+"texture": ExtResource("27_mey8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_adfns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_mvtlm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_k01up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_bw31w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_bcyq0")
 }],
 "loop": 1,
 "name": &"walk_north-west",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_qju1l")
+"texture": ExtResource("33_rcwg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_4spqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_xyko0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_266cw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_t42c5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_58gd3")
 }],
 "loop": 1,
 "name": &"walk_south",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_a65fw")
+"texture": ExtResource("39_gchjm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_dohwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_gphhq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_le4ac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_dmtkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_rqx40")
 }],
 "loop": 1,
 "name": &"walk_south-east",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_g5mob")
+"texture": ExtResource("45_qd51c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_5qh2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_kbmtf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_4dd38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_tqkc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_yuxn7")
 }],
 "loop": 1,
 "name": &"walk_south-west",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_h5o1q")
+"texture": ExtResource("51_17fvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_h4dqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_iam20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_p40cs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_6y0ux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_24bh8")
 }],
 "loop": 1,
 "name": &"walk_west",
-"speed": 5.0
+"speed": 10.0
 }]

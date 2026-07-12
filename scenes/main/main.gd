@@ -23,7 +23,7 @@ func _ready() -> void:
 	cat_select.cat_chosen.connect(_start_run)
 	shop_screen.back_pressed.connect(func() -> void: _switch(title_screen))
 	_show_only(title_screen)
-	AudioManager.play_music("res://assets/audio/music/menu_loop.ogg")
+	AudioManager.play_music("res://assets/audio/music/menu_loop.wav")
 
 
 func _switch(screen: Control) -> void:
@@ -48,7 +48,7 @@ func _spawn_arena() -> void:
 	arena = ARENA_SCENE.instantiate()
 	arena.run_finished.connect(_on_run_finished)
 	add_child(arena)
-	AudioManager.play_music("res://assets/audio/music/run_loop.ogg")
+	AudioManager.play_music("res://assets/audio/music/run_loop.wav")
 
 
 func _on_run_finished(action: String) -> void:
@@ -63,7 +63,7 @@ func _apply_run_finish(action: String) -> void:
 		# Straight back in with the same cat - keep the flow state.
 		_spawn_arena()
 		return
-	AudioManager.play_music("res://assets/audio/music/menu_loop.ogg")
+	AudioManager.play_music("res://assets/audio/music/menu_loop.wav")
 	if action == "shop":
 		_show_only(shop_screen)
 	else:

@@ -31,7 +31,19 @@ var _hitstopping := false
 var perf_director_us := 0
 var perf_snacks_us := 0
 
+## Decorative props per biome (non-colliding so the horde never snags).
+const PROPS_BY_BIOME := {
+	"kitchen": ["food_bowl", "water_bowl", "food_bag", "cardboard_box", "rug_patch"],
+	"living_room": ["cat_tower", "potted_plant", "cardboard_box", "rug_patch", "food_bowl"],
+	"backyard": ["garden_bush", "hydrant", "water_bowl", "cardboard_box", "potted_plant"],
+}
+const FLAT_PROPS := ["rug_patch"]
+const PROP_COUNT := 44
+const PROP_MIN_DIST := 160.0
+const PROP_MAX_DIST := 2400.0
+
 @onready var ground: Ground = $Ground
+@onready var decor: Node2D = $Decor
 @onready var player: Player = $World/Player
 @onready var camera: GameCamera = $GameCamera
 @onready var director: EnemyDirector = $Director
@@ -52,6 +64,7 @@ func _ready() -> void:
 	var biome: String = Ground.BIOMES[int(GameData.meta.get("runs", 0)) % Ground.BIOMES.size()]
 	ground.setup(biome, randi())
 	ground.update_around(Vector2.ZERO)
+	_scatter_props(biome)
 	player.setup(GameData.meta.selected_cat, self)
 	player.died.connect(_on_player_died)
 	director.setup(self)
@@ -59,6 +72,7 @@ func _ready() -> void:
 	InputRouter.app_focus_lost.connect(_on_focus_lost)
 	level_up_screen.option_chosen.connect(_on_upgrade_chosen)
 	game_over_screen.action.connect(_finish_run)
+	hud.pause_requested.connect(_toggle_pause)
 	pause_screen.restart_requested.connect(_finish_run.bind("again"))
 	pause_screen.quit_requested.connect(_finish_run.bind("menu"))
 	ObjectPool.prewarm(ENEMY_SCENE, 160)
@@ -312,11 +326,38 @@ func _on_focus_lost() -> void:
 func _on_player_died() -> void:
 	run_over = true
 	camera.add_trauma(0.7)
-	_poof(player.position, Color(0.9, 0.9, 0.95), 30, 4.0, 100.0)
-	player.hide()
+	hitstop(0.3, 0.05)
 	AudioManager.play_sfx("defeat")
-	var summary := GameData.end_run(GameData.run_time)
-	game_over_screen.show_summary(summary)
+	# A dramatic beat: the cat keels over, the dust settles, then the tally.
+	var t := create_tween()
+	t.tween_property(player.sprite, "rotation", PI * 0.5, 0.45) \
+		.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+	t.parallel().tween_property(player.sprite, "modulate",
+		Color(0.75, 0.7, 0.75, 0.9), 0.45)
+	t.tween_interval(0.8)
+	t.tween_callback(func() -> void:
+		var summary := GameData.end_run(GameData.run_time)
+		game_over_screen.show_summary(summary))
+
+
+func _scatter_props(biome: String) -> void:
+	var pool: Array = PROPS_BY_BIOME.get(biome, PROPS_BY_BIOME["kitchen"])
+	for i in PROP_COUNT:
+		var prop_name: String = pool.pick_random()
+		var path := "res://assets/sprites/props/%s.png" % prop_name
+		if not ResourceLoader.exists(path):
+			continue
+		var sprite := Sprite2D.new()
+		sprite.texture = load(path)
+		var angle := randf() * TAU
+		var dist := sqrt(randf()) * (PROP_MAX_DIST - PROP_MIN_DIST) + PROP_MIN_DIST
+		sprite.position = Vector2.from_angle(angle) * dist
+		if prop_name in FLAT_PROPS:
+			decor.add_child(sprite)
+		else:
+			# Tall props y-sort with the cast: origin at the base.
+			sprite.offset.y = -sprite.texture.get_height() * 0.5
+			enemy_container.add_child(sprite)
 
 
 func _finish_run(action: String) -> void:

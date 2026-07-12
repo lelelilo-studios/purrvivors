@@ -10,5 +10,7 @@ PixelLab subscription, then curated and integrated by hand.
   - Bundled at `assets/fonts/m5x7.ttf`; also credited in the in-game credits.
 
 ## Audio
-- None yet — audio lands in a later phase. Policy: CC0-first (Kenney / freesound CC0 /
-  procedural sfxr), one cohesive family, every file recorded here with source + license.
+- **All SFX and music** are procedurally generated for this project by
+  `tools/generate_audio.py` (sfxr-style synthesis) — original work, released
+  with this repo under the project license (treat as CC0). One synth family
+  on purpose, so everything sounds related.

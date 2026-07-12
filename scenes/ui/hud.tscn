@@ -110,6 +110,18 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 
+[node name="PauseRow" type="HBoxContainer" parent="TopStack/InfoRow/Counters"]
+layout_mode = 2
+alignment = 2
+mouse_filter = 2
+
+[node name="PauseButton" type="Button" parent="TopStack/InfoRow/Counters/PauseRow"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+custom_minimum_size = Vector2(44, 44)
+text = "II"
+
 [node name="AnnounceAnchor" type="Control" parent="."]
 layout_mode = 2
 mouse_filter = 2

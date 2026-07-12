@@ -16,6 +16,14 @@ const SEPARATION_RADIUS := 14.0
 const SEPARATION_PUSH := 34.0
 const KNOCKBACK_DECAY := 6.0
 
+const SURGE_LINES := [
+	"They smell the snacks!",
+	"INCOMING SWARM!",
+	"Uh oh. Here they come.",
+	"The yard empties out...",
+	"So many. SO many.",
+]
+
 # Dasher states
 const ROAM := 0
 const WINDUP := 1
@@ -76,6 +84,8 @@ func _update_surge(delta: float) -> void:
 		surge_left = Balance.SURGE_DURATION_SEC
 		pincer = randf() < Balance.PINCER_CHANCE
 		pincer_angle = randf() * TAU
+		arena.hud.announce(SURGE_LINES.pick_random())
+		AudioManager.play_sfx("dash", 0.1, -4.0)
 
 
 func _spawn_pack(t: float) -> void:

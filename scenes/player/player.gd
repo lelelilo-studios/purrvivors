@@ -71,6 +71,8 @@ func recompute_stats() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if hp <= 0:
+		return   # fallen - the death tween owns the sprite now
 	if iframes > 0.0:
 		iframes -= delta
 		sprite.visible = fmod(iframes, 0.16) < 0.10   # classic invuln blink

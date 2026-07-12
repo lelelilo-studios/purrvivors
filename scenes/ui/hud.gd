@@ -2,6 +2,8 @@ extends MarginContainer
 ## In-run HUD: XP bar + level, hearts, run timer, Fish Coins, kills.
 ## Anchors + containers only; the virtual joystick lives here too.
 
+signal pause_requested
+
 const HEART_TEXTURE_PATH := "res://assets/sprites/fx/heart.png"
 const COIN_TEXTURE_PATH := "res://assets/sprites/snacks/coin.png"
 
@@ -35,6 +37,10 @@ func _ready() -> void:
 	level_label.text = "Lv 1"
 	xp_bar.max_value = Balance.xp_to_next(1)
 	xp_bar.value = 0
+	var pause_button: Button = %PauseButton
+	pause_button.visible = InputRouter.touch_mode
+	InputRouter.touch_mode_changed.connect(func(on: bool) -> void: pause_button.visible = on)
+	pause_button.pressed.connect(func() -> void: pause_requested.emit())
 
 
 func _process(delta: float) -> void:

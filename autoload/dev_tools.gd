@@ -111,6 +111,10 @@ func _take_screenshot() -> void:
 	var err := image.save_png(_screenshot_path)
 	var arena := get_tree().get_first_node_in_group(&"arena") as Arena
 	var enemies := arena.active_enemies.size() if arena != null else -1
+	if arena != null:
+		print("[dbg] hud canvas=%s world canvas=%s hud layer parent=%s" % [
+			arena.hud.get_canvas(), arena.enemy_container.get_canvas(),
+			arena.hud.get_parent().name])
 	print("screenshot -> %s (err=%d) fps=%d enemies=%d" % [
 		_screenshot_path, err, Engine.get_frames_per_second(), enemies])
 	get_tree().quit()

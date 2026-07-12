@@ -378,42 +378,49 @@ const BOSS_HP_META_SCALE := 1.0   # hook: scale boss hp if meta makes runs too e
 
 const SHOP_UPGRADES := {
 	"whisker_vitality": {
+		"icon": "res://assets/sprites/ui/cupcake.png",
 		"display_name": "Whisker Vitality",
 		"flavor": "Eat your greens. And the mice.",
 		"max_tiers": 5, "base_cost": 40, "cost_growth": 1.6,
 		"effect": "max_hp", "per_tier": 1,
 	},
 	"toe_beans": {
+		"icon": "res://assets/sprites/ui/toe_beans.png",
 		"display_name": "Turbo Toe Beans",
 		"flavor": "Freshly kneaded.",
 		"max_tiers": 5, "base_cost": 50, "cost_growth": 1.6,
 		"effect": "move_speed_mult", "per_tier": 0.05,
 	},
 	"long_whiskers": {
+		"icon": "res://assets/sprites/ui/whisker.png",
 		"display_name": "Longer Whiskers",
 		"flavor": "Sense snacks from another room.",
 		"max_tiers": 5, "base_cost": 45, "cost_growth": 1.6,
 		"effect": "pickup_mult", "per_tier": 0.15,
 	},
 	"sharp_claws": {
+		"icon": "res://assets/sprites/fx/claw_swipe.png",
 		"display_name": "Salon Claws",
 		"flavor": "Buffed, polished, lethal.",
 		"max_tiers": 5, "base_cost": 60, "cost_growth": 1.65,
 		"effect": "damage_mult", "per_tier": 0.06,
 	},
 	"lucky_bell": {
+		"icon": "res://assets/sprites/ui/bell.png",
 		"display_name": "Lucky Bell",
 		"flavor": "Jingle responsibly.",
 		"max_tiers": 3, "base_cost": 80, "cost_growth": 1.8,
 		"effect": "luck", "per_tier": 1.0,
 	},
 	"head_start": {
+		"icon": "res://assets/sprites/ui/stretch.png",
 		"display_name": "Warm-Up Stretches",
 		"flavor": "Start the day one level of smug higher.",
 		"max_tiers": 3, "base_cost": 100, "cost_growth": 1.9,
 		"effect": "starting_weapon_level", "per_tier": 1,
 	},
 	"spare_life": {
+		"icon": "res://assets/sprites/ui/catnap.png",
 		"display_name": "Emergency Catnap",
 		"flavor": "Death is just a nap you weren't planning.",
 		"max_tiers": 1, "base_cost": 400, "cost_growth": 1.0,
